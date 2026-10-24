@@ -12,9 +12,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appName => 'MyShop';
 
   @override
-  String get foundationPreviewTitle => 'Design System';
-
-  @override
   String get appearanceLabel => 'Appearance';
 
   @override
@@ -42,24 +39,126 @@ class AppLocalizationsEn extends AppLocalizations {
   String get colorsLabel => 'Colors';
 
   @override
-  String get typographyLabel => 'Typography';
-
-  @override
-  String get directionLabel => 'Direction';
-
-  @override
-  String get directionStart => 'Start';
-
-  @override
-  String get directionEnd => 'End';
-
-  @override
   String get sampleHeadline => 'Featured';
 
   @override
-  String get sampleProductName =>
-      'Astylish Women Open Front Long Sleeve Chunky Knit Cardigan';
+  String get getStarted => 'Get Started';
 
   @override
-  String get getStarted => 'Get Started';
+  String get searchHint => 'What are you looking for?';
+
+  @override
+  String get seeAll => 'See All';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get navHome => 'Home';
+
+  @override
+  String get navCatalogue => 'Catalogue';
+
+  @override
+  String get navFavorite => 'Favorite';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String get openCart => 'Open cart';
+
+  @override
+  String itemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String discountBadge(int percent) {
+    return '-$percent%';
+  }
+
+  @override
+  String ratingLabel(String rating) {
+    return 'Rated $rating out of 5';
+  }
+
+  @override
+  String get addToFavorites => 'Add to favorites';
+
+  @override
+  String get removeFromFavorites => 'Remove from favorites';
+
+  @override
+  String get increaseQuantity => 'Increase quantity';
+
+  @override
+  String get decreaseQuantity => 'Decrease quantity';
+
+  @override
+  String get sizesLabel => 'Sizes';
+
+  @override
+  String get colorBlack => 'Black';
+
+  @override
+  String get colorRed => 'Red';
+
+  @override
+  String get colorGreen => 'Green';
+
+  @override
+  String get colorBlue => 'Blue';
+
+  @override
+  String get colorPurple => 'Purple';
+
+  @override
+  String get colorYellow => 'Yellow';
+
+  @override
+  String get colorOrange => 'Orange';
+
+  @override
+  String get colorBrown => 'Brown';
+
+  @override
+  String get colorBeige => 'Beige';
+
+  @override
+  String get colorPink => 'Pink';
+
+  @override
+  String get colorGray => 'Gray';
+
+  @override
+  String get colorWhite => 'White';
+
+  @override
+  String get validationRequired => 'This field is required';
+
+  @override
+  String validationMinLength(int length) {
+    return 'Enter at least $length characters';
+  }
+
+  @override
+  String validationMaxLength(int length) {
+    return 'Enter at most $length characters';
+  }
+
+  @override
+  String get validationNumber => 'Enter numbers only';
+
+  @override
+  String get validationEmail => 'Enter a valid email';
+
+  @override
+  String get validationPattern => 'Invalid format';
 }

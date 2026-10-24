@@ -1,7 +1,6 @@
 {
   "@@locale": "en",
   "appName": "MyShop",
-  "foundationPreviewTitle": "Design System",
   "appearanceLabel": "Appearance",
   "themeSystem": "System",
   "themeLight": "Light",
@@ -11,11 +10,68 @@
   "languageEnglish": "English",
   "languageArabic": "العربية",
   "colorsLabel": "Colors",
-  "typographyLabel": "Typography",
-  "directionLabel": "Direction",
-  "directionStart": "Start",
-  "directionEnd": "End",
   "sampleHeadline": "Featured",
-  "sampleProductName": "Astylish Women Open Front Long Sleeve Chunky Knit Cardigan",
-  "getStarted": "Get Started"
+  "getStarted": "Get Started",
+
+  "searchHint": "What are you looking for?",
+  "seeAll": "See All",
+  "back": "Back",
+  "navHome": "Home",
+  "navCatalogue": "Catalogue",
+  "navFavorite": "Favorite",
+  "navProfile": "Profile",
+  "openCart": "Open cart",
+  "itemsCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@itemsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "discountBadge": "-{percent}%",
+  "@discountBadge": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "ratingLabel": "Rated {rating} out of 5",
+  "@ratingLabel": {
+    "placeholders": {
+      "rating": {"type": "String"}
+    }
+  },
+  "addToFavorites": "Add to favorites",
+  "removeFromFavorites": "Remove from favorites",
+  "increaseQuantity": "Increase quantity",
+  "decreaseQuantity": "Decrease quantity",
+  "sizesLabel": "Sizes",
+
+  "colorBlack": "Black",
+  "colorRed": "Red",
+  "colorGreen": "Green",
+  "colorBlue": "Blue",
+  "colorPurple": "Purple",
+  "colorYellow": "Yellow",
+  "colorOrange": "Orange",
+  "colorBrown": "Brown",
+  "colorBeige": "Beige",
+  "colorPink": "Pink",
+  "colorGray": "Gray",
+  "colorWhite": "White",
+
+  "validationRequired": "This field is required",
+  "validationMinLength": "Enter at least {length} characters",
+  "@validationMinLength": {
+    "placeholders": {
+      "length": {"type": "int"}
+    }
+  },
+  "validationMaxLength": "Enter at most {length} characters",
+  "@validationMaxLength": {
+    "placeholders": {
+      "length": {"type": "int"}
+    }
+  },
+  "validationNumber": "Enter numbers only",
+  "validationEmail": "Enter a valid email",
+  "validationPattern": "Invalid format"
 }

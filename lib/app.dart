@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:reactive_forms/reactive_forms.dart';
 
 import 'core/extensions/context_extensions.dart';
+import 'core/forms/validation_messages.dart';
 import 'core/l10n/locale_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_fonts.dart';
@@ -26,6 +28,7 @@ class MyShopApp extends ConsumerWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       // The font depends on the *resolved* locale (which may come from the
       // device), so the theme is rebuilt here where that locale is known.
+      // Same place for the form error texts, which need the translations.
       builder: (context, child) {
         final fontFamily = AppFonts.forLocale(Localizations.localeOf(context));
         return Theme(
@@ -33,7 +36,10 @@ class MyShopApp extends ConsumerWidget {
             Theme.of(context).brightness,
             fontFamily: fontFamily,
           ),
-          child: child!,
+          child: ReactiveFormConfig(
+            validationMessages: appValidationMessages(context.l10n),
+            child: child!,
+          ),
         );
       },
     );

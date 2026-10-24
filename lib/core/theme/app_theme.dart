@@ -41,10 +41,11 @@ abstract final class AppTheme {
         const TextTheme(
           displaySmall: AppTextStyles.display,
           headlineSmall: AppTextStyles.headline,
-          titleLarge: AppTextStyles.title,
+          titleLarge: AppTextStyles.headline,
           bodyLarge: AppTextStyles.bodyLarge,
           bodyMedium: AppTextStyles.body,
-          bodySmall: AppTextStyles.caption,
+          bodySmall: AppTextStyles.bodySmall,
+          labelSmall: AppTextStyles.caption,
           labelLarge: AppTextStyles.button,
           labelMedium: AppTextStyles.label,
         ).apply(
@@ -79,7 +80,7 @@ abstract final class AppTheme {
         scrolledUnderElevation: 0,
         centerTitle: true,
         toolbarHeight: AppSizes.toolbarHeight,
-        titleTextStyle: AppTextStyles.title.copyWith(
+        titleTextStyle: AppTextStyles.headline.copyWith(
           fontFamily: fontFamily,
           color: AppColors.white,
         ),
@@ -104,11 +105,11 @@ abstract final class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: palette.surface,
-        hintStyle: AppTextStyles.bodyLarge.copyWith(color: palette.hint),
+        hintStyle: AppTextStyles.body.copyWith(color: palette.textSecondary),
         errorStyle: AppTextStyles.caption.copyWith(color: palette.sale),
         contentPadding: const EdgeInsetsDirectional.symmetric(
           horizontal: AppSpacing.m,
-          vertical: AppSpacing.s,
+          vertical: AppSpacing.inputVertical,
         ),
         border: inputBorder(palette.border),
         enabledBorder: inputBorder(palette.border),

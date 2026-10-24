@@ -2,7 +2,8 @@ import 'package:flutter/widgets.dart';
 
 import 'app_fonts.dart';
 
-/// Type scale from the Figma screens.
+/// Type scale measured from the Figma screens (cap heights of the @2x/@3x
+/// exports).
 ///
 /// Styles intentionally have no color and no font family: they inherit both
 /// from the active theme, so the same style works in light/dark and
@@ -15,75 +16,81 @@ abstract final class AppTextStyles {
     height: 1.25,
   );
 
-  /// Section titles: "Featured", "Catalogue", "Shipping Address".
+  /// Section titles ("Featured", "Catalogue"), header titles, "Total price".
   static const headline = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     height: 1.3,
   );
 
-  /// App bar titles, "Total price", "Success".
-  static const title = TextStyle(
+  /// Labels of the 48pt buttons.
+  static const button = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w700,
+    height: 1.2,
+  );
+
+  /// Labels of the 64pt buttons of the sign in screens.
+  static const buttonLarge = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    height: 1.2,
+  );
+
+  /// Sign in subtitles and the phone number input.
+  static const bodyLarge = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    height: 1.45,
+  );
+
+  /// Product names, descriptions, input text, size chips.
+  static const body = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    height: 1.27, // 19pt lines
+  );
+
+  /// Search placeholder, crossed-out old price.
+  static const bodySmall = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.3,
+  );
+
+  /// "Colors", "Sizes", "Price", "Sort by" labels.
+  static const label = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    height: 1.3,
+  );
+
+  /// Prices on product cards and cart lines.
+  static const price = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w700,
     height: 1.3,
   );
 
-  /// Button labels.
-  static const button = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-    height: 1.2,
-  );
-
-  /// Descriptions, input text.
-  static const bodyLarge = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
-    height: 1.5,
-  );
-
-  /// Product names, review text.
-  static const body = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    height: 1.4,
-  );
-
-  /// "Colors", "Sizes", "Price", "Sort by" labels.
-  static const label = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    height: 1.3,
-  );
-
-  /// Prices on product cards.
-  static const price = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-    height: 1.3,
-  );
-
-  /// Prices on product page / totals.
+  /// Prices on the product page and totals.
   static const priceLarge = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w700,
     height: 1.3,
   );
 
-  /// Bottom navigation labels, badges, review counts.
+  /// Bottom navigation labels, cart pill, badges.
   static const caption = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    height: 1.3,
+    height: 1.4,
   );
 
   /// "MyShop" wordmark (stays in Latin script in both languages).
   static const logo = TextStyle(
     fontFamily: AppFonts.logo,
-    fontSize: 24,
-    fontWeight: FontWeight.w700,
-    letterSpacing: 2,
+    fontSize: 23,
+    fontWeight: FontWeight.w600,
     height: 1.2,
   );
 }

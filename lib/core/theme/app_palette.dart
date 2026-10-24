@@ -56,7 +56,10 @@ class AppPalette extends ThemeExtension<AppPalette> {
     colors: [AppColors.brandDark, AppColors.brandLight],
   );
 
+  // Directional: the badge sits on the start edge, red side first.
   static const _saleBadgeGradient = LinearGradient(
+    begin: AlignmentDirectional.centerStart,
+    end: AlignmentDirectional.centerEnd,
     colors: [AppColors.saleBadgeStart, AppColors.saleBadgeEnd],
   );
 
@@ -73,7 +76,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     sale: AppColors.sale,
     rating: AppColors.rating,
     success: AppColors.success,
-    shadow: Color(0x14000000),
+    shadow: Color(0x0F000000),
     brandGradient: _brandGradient,
     saleBadgeGradient: _saleBadgeGradient,
   );

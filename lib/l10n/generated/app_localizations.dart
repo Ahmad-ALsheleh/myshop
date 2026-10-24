@@ -104,12 +104,6 @@ abstract class AppLocalizations {
   /// **'MyShop'**
   String get appName;
 
-  /// No description provided for @foundationPreviewTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Design System'**
-  String get foundationPreviewTitle;
-
   /// No description provided for @appearanceLabel.
   ///
   /// In en, this message translates to:
@@ -164,47 +158,221 @@ abstract class AppLocalizations {
   /// **'Colors'**
   String get colorsLabel;
 
-  /// No description provided for @typographyLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Typography'**
-  String get typographyLabel;
-
-  /// No description provided for @directionLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Direction'**
-  String get directionLabel;
-
-  /// No description provided for @directionStart.
-  ///
-  /// In en, this message translates to:
-  /// **'Start'**
-  String get directionStart;
-
-  /// No description provided for @directionEnd.
-  ///
-  /// In en, this message translates to:
-  /// **'End'**
-  String get directionEnd;
-
   /// No description provided for @sampleHeadline.
   ///
   /// In en, this message translates to:
   /// **'Featured'**
   String get sampleHeadline;
 
-  /// No description provided for @sampleProductName.
-  ///
-  /// In en, this message translates to:
-  /// **'Astylish Women Open Front Long Sleeve Chunky Knit Cardigan'**
-  String get sampleProductName;
-
   /// No description provided for @getStarted.
   ///
   /// In en, this message translates to:
   /// **'Get Started'**
   String get getStarted;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you looking for?'**
+  String get searchHint;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAll;
+
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// No description provided for @navHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get navHome;
+
+  /// No description provided for @navCatalogue.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalogue'**
+  String get navCatalogue;
+
+  /// No description provided for @navFavorite.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorite'**
+  String get navFavorite;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// No description provided for @openCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Open cart'**
+  String get openCart;
+
+  /// No description provided for @itemsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item} other{{count} items}}'**
+  String itemsCount(int count);
+
+  /// No description provided for @discountBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'-{percent}%'**
+  String discountBadge(int percent);
+
+  /// No description provided for @ratingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rated {rating} out of 5'**
+  String ratingLabel(String rating);
+
+  /// No description provided for @addToFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to favorites'**
+  String get addToFavorites;
+
+  /// No description provided for @removeFromFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get removeFromFavorites;
+
+  /// No description provided for @increaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase quantity'**
+  String get increaseQuantity;
+
+  /// No description provided for @decreaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease quantity'**
+  String get decreaseQuantity;
+
+  /// No description provided for @sizesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sizes'**
+  String get sizesLabel;
+
+  /// No description provided for @colorBlack.
+  ///
+  /// In en, this message translates to:
+  /// **'Black'**
+  String get colorBlack;
+
+  /// No description provided for @colorRed.
+  ///
+  /// In en, this message translates to:
+  /// **'Red'**
+  String get colorRed;
+
+  /// No description provided for @colorGreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Green'**
+  String get colorGreen;
+
+  /// No description provided for @colorBlue.
+  ///
+  /// In en, this message translates to:
+  /// **'Blue'**
+  String get colorBlue;
+
+  /// No description provided for @colorPurple.
+  ///
+  /// In en, this message translates to:
+  /// **'Purple'**
+  String get colorPurple;
+
+  /// No description provided for @colorYellow.
+  ///
+  /// In en, this message translates to:
+  /// **'Yellow'**
+  String get colorYellow;
+
+  /// No description provided for @colorOrange.
+  ///
+  /// In en, this message translates to:
+  /// **'Orange'**
+  String get colorOrange;
+
+  /// No description provided for @colorBrown.
+  ///
+  /// In en, this message translates to:
+  /// **'Brown'**
+  String get colorBrown;
+
+  /// No description provided for @colorBeige.
+  ///
+  /// In en, this message translates to:
+  /// **'Beige'**
+  String get colorBeige;
+
+  /// No description provided for @colorPink.
+  ///
+  /// In en, this message translates to:
+  /// **'Pink'**
+  String get colorPink;
+
+  /// No description provided for @colorGray.
+  ///
+  /// In en, this message translates to:
+  /// **'Gray'**
+  String get colorGray;
+
+  /// No description provided for @colorWhite.
+  ///
+  /// In en, this message translates to:
+  /// **'White'**
+  String get colorWhite;
+
+  /// No description provided for @validationRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get validationRequired;
+
+  /// No description provided for @validationMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter at least {length} characters'**
+  String validationMinLength(int length);
+
+  /// No description provided for @validationMaxLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter at most {length} characters'**
+  String validationMaxLength(int length);
+
+  /// No description provided for @validationNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter numbers only'**
+  String get validationNumber;
+
+  /// No description provided for @validationEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email'**
+  String get validationEmail;
+
+  /// No description provided for @validationPattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid format'**
+  String get validationPattern;
 }
 
 class _AppLocalizationsDelegate
