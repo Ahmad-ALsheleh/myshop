@@ -13,4 +13,12 @@ abstract final class AppFonts {
 
   static String forLocale(Locale locale) =>
       locale.languageCode == 'ar' ? arabic : latin;
+
+  /// Inter is wider than SF Pro, the font of the design: a slightly negative
+  /// tracking brings Latin text widths close to the design.
+  static const latinLetterSpacing = -0.5;
+
+  /// Arabic keeps 0: spacing would pull the joined letters apart.
+  static double letterSpacingFor(String family) =>
+      family == latin ? latinLetterSpacing : 0;
 }

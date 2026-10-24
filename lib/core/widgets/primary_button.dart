@@ -42,15 +42,11 @@ class PrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed == null ? null : (isLoading ? () {} : onPressed),
         style: ElevatedButton.styleFrom(
-          // A button text style replaces the inherited one, so it must carry
-          // the font family of the current language itself.
-          textStyle:
-              (_isLarge ? AppTextStyles.buttonLarge : AppTextStyles.button)
-                  .copyWith(
-                    fontFamily: Theme.of(
-                      context,
-                    ).textTheme.labelLarge?.fontFamily,
-                  ),
+          // A button text style replaces the inherited one, so build it on
+          // the theme style that carries the language font and tracking.
+          textStyle: Theme.of(context).textTheme.labelLarge!.merge(
+            _isLarge ? AppTextStyles.buttonLarge : AppTextStyles.button,
+          ),
           disabledBackgroundColor: palette.accent.withValues(alpha: 0.5),
           disabledForegroundColor: palette.onAccent,
         ),

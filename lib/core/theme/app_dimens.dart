@@ -19,9 +19,10 @@ abstract final class AppSpacing {
   /// Vertical padding of the 64pt phone input with 18pt text.
   static const double inputVerticalLarge = 19;
 
-  // Search field: 20pt magnifier 18pt from the edge, text 10pt after it.
+  // Search field: 20pt magnifier 18pt from the edge, text 10pt after it
+  // (the end padding is smaller: the icon box has its own inner margin).
   static const double searchIconStart = 14;
-  static const double searchIconEnd = 10;
+  static const double searchIconEnd = 5;
 
   // Product card
   static const double imageToStars = 8;

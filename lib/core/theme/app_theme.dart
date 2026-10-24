@@ -60,7 +60,11 @@ abstract final class AppTheme {
       borderSide: BorderSide(color: color),
     );
 
-    return ThemeData(
+    final letterSpacing = AppFonts.letterSpacingFor(fontFamily);
+    TextStyle buttonText(TextStyle style) =>
+        style.copyWith(fontFamily: fontFamily, letterSpacing: letterSpacing);
+
+    final theme = ThemeData(
       useMaterial3: true,
       brightness: brightness,
       colorScheme: colorScheme,
@@ -93,13 +97,13 @@ abstract final class AppTheme {
           elevation: 0,
           minimumSize: const Size.fromHeight(AppSizes.buttonHeight),
           shape: RoundedRectangleBorder(borderRadius: radiusS),
-          textStyle: AppTextStyles.button.copyWith(fontFamily: fontFamily),
+          textStyle: buttonText(AppTextStyles.button),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: palette.textSecondary,
-          textStyle: AppTextStyles.button.copyWith(fontFamily: fontFamily),
+          textStyle: buttonText(AppTextStyles.button),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -127,6 +131,34 @@ abstract final class AppTheme {
         ),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(color: palette.accent),
+    );
+
+    // Material typography adds its own letter spacing (+0.25 on body text,
+    // +0.5 on inputs...); replace it everywhere with the one of the font.
+    return theme.copyWith(
+      textTheme: _withLetterSpacing(theme.textTheme, letterSpacing),
+    );
+  }
+
+  static TextTheme _withLetterSpacing(TextTheme theme, double spacing) {
+    TextStyle? track(TextStyle? style) =>
+        style?.copyWith(letterSpacing: spacing);
+    return theme.copyWith(
+      displayLarge: track(theme.displayLarge),
+      displayMedium: track(theme.displayMedium),
+      displaySmall: track(theme.displaySmall),
+      headlineLarge: track(theme.headlineLarge),
+      headlineMedium: track(theme.headlineMedium),
+      headlineSmall: track(theme.headlineSmall),
+      titleLarge: track(theme.titleLarge),
+      titleMedium: track(theme.titleMedium),
+      titleSmall: track(theme.titleSmall),
+      bodyLarge: track(theme.bodyLarge),
+      bodyMedium: track(theme.bodyMedium),
+      bodySmall: track(theme.bodySmall),
+      labelLarge: track(theme.labelLarge),
+      labelMedium: track(theme.labelMedium),
+      labelSmall: track(theme.labelSmall),
     );
   }
 }
