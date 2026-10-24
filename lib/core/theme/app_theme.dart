@@ -117,7 +117,8 @@ abstract final class AppTheme {
         ),
         border: inputBorder(palette.border),
         enabledBorder: inputBorder(palette.border),
-        focusedBorder: inputBorder(palette.accent),
+        // The design keeps the grey border while typing.
+        focusedBorder: inputBorder(palette.border),
         errorBorder: inputBorder(palette.sale),
         focusedErrorBorder: inputBorder(palette.sale),
       ),

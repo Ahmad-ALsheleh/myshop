@@ -1,3 +1,5 @@
+import 'dart:ui' show Radius;
+
 /// Spacing scale measured from the Figma frames (375 x 812).
 abstract final class AppSpacing {
   static const double xxs = 4;
@@ -17,7 +19,7 @@ abstract final class AppSpacing {
   static const double inputVertical = 14;
 
   /// Vertical padding of the 64pt phone input with 18pt text.
-  static const double inputVerticalLarge = 19;
+  static const double inputVerticalLarge = 20; // 64 - 23.6 (text line) = 2 x 20
 
   // Search field: 20pt magnifier 18pt from the edge, text 10pt after it
   // (the end padding is smaller: the icon box has its own inner margin).
@@ -96,4 +98,44 @@ abstract final class AppSizes {
 
   /// Width of the back arrow / heart slots around "Add to Cart".
   static const double bottomBarSideSlot = 80;
+}
+
+/// Onboarding and sign in screens (measured on the @2x / @3x exports).
+abstract final class AuthDimens {
+  // Onboarding: purple panel over the photo.
+  static const double panelHeight = 257; // + bottom safe area
+  static const double panelRadius = 40;
+  static const double logoSize = 35;
+  static const double logoTop = 24;
+  static const double logoToText = 16;
+  static const double textToButton = 32;
+  static const double textInset = 48;
+  static const double buttonWidth = 239;
+
+  // Curved header of the phone / verification screens.
+  static const double headerHeight = 153; // under the status bar
+  static const Radius headerCurve = Radius.elliptical(191, 197);
+  static const double titleTop = 47;
+
+  // Content under the header.
+  static const double subtitleTop = 31;
+  static const double fieldTop = 22;
+  static const double buttonTop = 24;
+  static const double secondaryTop = 24;
+
+  // Phone input prefix.
+  static const double flagWidth = 32;
+  static const double flagHeight = 21;
+  static const double chevron = 18;
+  static const double prefixGap = 8;
+  static const double dialCodeGap = 10;
+
+  // Verification code.
+  static const double phoneLineGap = 6;
+  static const double codeTop = 36;
+  static const double codeCellWidth = 47;
+  static const double codeCellGap = 25;
+  static const double codeDigitToLine = 10;
+  static const double codeLine = 2;
+  static const double codeToButton = 26;
 }

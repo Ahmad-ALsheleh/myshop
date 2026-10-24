@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/storage/persisted_flag.dart';
 import '../../../../core/storage/preferences_provider.dart';
 import '../../data/models/user.dart';
 import '../../data/repositories/auth_repository.dart';
@@ -8,6 +9,16 @@ import '../../data/repositories/auth_repository.dart';
 /// saved in shared preferences).
 final sessionProvider = NotifierProvider<SessionNotifier, User?>(
   SessionNotifier.new,
+);
+
+/// "Skip" on the phone screen: the app is used without signing in.
+final guestModeProvider = NotifierProvider<PersistedFlag, bool>(
+  () => PersistedFlag('guest_mode'),
+);
+
+/// The main app is open to signed-in users and guests.
+final canEnterAppProvider = Provider<bool>(
+  (ref) => ref.watch(sessionProvider) != null || ref.watch(guestModeProvider),
 );
 
 class SessionNotifier extends Notifier<User?> {
@@ -30,10 +41,13 @@ class SessionNotifier extends Notifier<User?> {
     if (!ref.mounted) return;
     state = user;
     await ref.read(sharedPreferencesProvider).setString(_phoneKey, phone);
+    await ref.read(guestModeProvider.notifier).set(false);
   }
 
+  /// Back to the phone screen (also ends the guest mode).
   Future<void> signOut() async {
     state = null;
     await ref.read(sharedPreferencesProvider).remove(_phoneKey);
+    await ref.read(guestModeProvider.notifier).set(false);
   }
 }

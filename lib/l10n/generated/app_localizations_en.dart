@@ -45,6 +45,50 @@ class AppLocalizationsEn extends AppLocalizations {
   String get getStarted => 'Get Started';
 
   @override
+  String get onboardingSubtitle =>
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry';
+
+  @override
+  String get phoneTitle => 'What Is Your Phone\nNumber?';
+
+  @override
+  String get phoneSubtitle =>
+      'Please enter your phone number to verify your account';
+
+  @override
+  String get sendVerificationCode => 'Send Verification Code';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get selectCountry => 'Select country';
+
+  @override
+  String get verificationTitle => 'Verification\nCode';
+
+  @override
+  String get verificationSubtitle => 'Please enter Code sent to';
+
+  @override
+  String get changePhoneNumber => 'Change Phone Number';
+
+  @override
+  String get resendCode => 'Resend Code';
+
+  @override
+  String get codeResent => 'A new code has been sent';
+
+  @override
+  String get invalidCode => 'The code is not correct';
+
+  @override
+  String get validationPhone => 'Enter a valid phone number';
+
+  @override
+  String get validationCode => 'Enter the 4-digit code';
+
+  @override
   String get searchHint => 'What are you looking for?';
 
   @override

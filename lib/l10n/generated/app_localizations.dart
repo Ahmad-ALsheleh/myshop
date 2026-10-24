@@ -170,6 +170,90 @@ abstract class AppLocalizations {
   /// **'Get Started'**
   String get getStarted;
 
+  /// No description provided for @onboardingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lorem Ipsum is simply dummy text of the printing and typesetting industry'**
+  String get onboardingSubtitle;
+
+  /// No description provided for @phoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What Is Your Phone\nNumber?'**
+  String get phoneTitle;
+
+  /// No description provided for @phoneSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your phone number to verify your account'**
+  String get phoneSubtitle;
+
+  /// No description provided for @sendVerificationCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Verification Code'**
+  String get sendVerificationCode;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @selectCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Select country'**
+  String get selectCountry;
+
+  /// No description provided for @verificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification\nCode'**
+  String get verificationTitle;
+
+  /// No description provided for @verificationSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter Code sent to'**
+  String get verificationSubtitle;
+
+  /// No description provided for @changePhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Phone Number'**
+  String get changePhoneNumber;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Code'**
+  String get resendCode;
+
+  /// No description provided for @codeResent.
+  ///
+  /// In en, this message translates to:
+  /// **'A new code has been sent'**
+  String get codeResent;
+
+  /// No description provided for @invalidCode.
+  ///
+  /// In en, this message translates to:
+  /// **'The code is not correct'**
+  String get invalidCode;
+
+  /// No description provided for @validationPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid phone number'**
+  String get validationPhone;
+
+  /// No description provided for @validationCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the 4-digit code'**
+  String get validationCode;
+
   /// No description provided for @searchHint.
   ///
   /// In en, this message translates to:

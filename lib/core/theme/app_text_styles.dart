@@ -11,7 +11,7 @@ import 'app_fonts.dart';
 abstract final class AppTextStyles {
   /// "What Is Your Phone Number?", "Verification Code".
   static const display = TextStyle(
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: FontWeight.w700,
     height: 1.25,
   );
@@ -39,9 +39,9 @@ abstract final class AppTextStyles {
 
   /// Sign in subtitles and the phone number input.
   static const bodyLarge = TextStyle(
-    fontSize: 18,
+    fontSize: 17.5, // same cap height as the 18pt SF Pro of the design
     fontWeight: FontWeight.w400,
-    height: 1.45,
+    height: 1.35,
   );
 
   /// Product names, descriptions, input text, size chips.
@@ -86,10 +86,24 @@ abstract final class AppTextStyles {
     height: 1.4,
   );
 
+  /// Digits of the verification code.
+  static const codeDigit = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+  );
+
+  /// Small links and notes: "Change Phone Number", review dates.
+  static const footnote = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    height: 1.3,
+  );
+
   /// "MyShop" wordmark (stays in Latin script in both languages).
   static const logo = TextStyle(
     fontFamily: AppFonts.logo,
-    fontSize: 23,
+    fontSize: 22,
     fontWeight: FontWeight.w600,
     height: 1.2,
   );

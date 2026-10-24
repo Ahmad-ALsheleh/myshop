@@ -7,6 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:myshop/app.dart';
+import 'package:myshop/core/router/app_router.dart';
+import 'package:myshop/core/router/app_routes.dart';
 import 'package:myshop/core/storage/preferences_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,15 +22,30 @@ const _enabled = bool.fromEnvironment('PREVIEW');
 void main() {
   setUpAll(_loadFonts);
 
-  for (final (name, prefs) in [
+  const light = <String, Object>{'theme_mode': 'light', 'locale': 'en'};
+  const darkAr = <String, Object>{'theme_mode': 'dark', 'locale': 'ar'};
+  const inApp = <String, Object>{'onboarding_seen': true, 'guest_mode': true};
+  const signedOut = <String, Object>{'onboarding_seen': true};
+
+  // name, saved preferences, route (null = where the app starts), height
+  final screens = <(String, Map<String, Object>, String?, double)>[
+    ('gallery_light_en', {...light, ...inApp}, null, 1900),
+    ('gallery_dark_ar', {...darkAr, ...inApp}, null, 1900),
+    ('onboarding_light_en', light, null, 812),
+    ('onboarding_dark_ar', darkAr, null, 812),
+    ('phone_light_en', {...light, ...signedOut}, null, 812),
+    ('phone_dark_ar', {...darkAr, ...signedOut}, null, 812),
     (
-      'gallery_light_en',
-      <String, Object>{'theme_mode': 'light', 'locale': 'en'},
+      'verification_light_en',
+      {...light, ...signedOut},
+      AppRoutes.verificationOf('+380991234567'),
+      812,
     ),
-    ('gallery_dark_ar', <String, Object>{'theme_mode': 'dark', 'locale': 'ar'}),
-  ]) {
+  ];
+
+  for (final (name, prefs, location, height) in screens) {
     testWidgets(name, skip: !_enabled, (tester) async {
-      await _render(tester, name, prefs, height: 1900);
+      await _render(tester, name, prefs, location: location, height: height);
     });
   }
 }
@@ -37,6 +54,7 @@ Future<void> _render(
   WidgetTester tester,
   String name,
   Map<String, Object> prefs, {
+  String? location,
   double height = 812,
 }) async {
   tester.view
@@ -48,6 +66,9 @@ Future<void> _render(
   SharedPreferences.setMockInitialValues(prefs);
   final preferences = await SharedPreferences.getInstance();
   final boundary = GlobalKey();
+  final container = ProviderContainer.test(
+    overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
+  );
 
   // flutter_test draws shadows without blur unless told otherwise; it must
   // be restored before the test ends.
@@ -56,13 +77,17 @@ Future<void> _render(
   await tester.pumpWidget(
     RepaintBoundary(
       key: boundary,
-      child: ProviderScope(
-        overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
+      child: UncontrolledProviderScope(
+        container: container,
         child: const MyShopApp(),
       ),
     ),
   );
   await tester.pump();
+  if (location != null) {
+    container.read(appRouterProvider).go(location);
+    await tester.pumpAndSettle();
+  }
 
   await tester.runAsync(() async {
     for (final element in find.byType(Image).evaluate()) {

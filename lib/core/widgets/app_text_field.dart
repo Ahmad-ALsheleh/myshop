@@ -23,6 +23,7 @@ class AppTextField<T> extends StatelessWidget {
     this.maxLength,
     this.textAlign = TextAlign.start,
     this.textDirection,
+    this.autofocus = false,
     this.large = false,
     this.validationMessages,
   });
@@ -40,6 +41,8 @@ class AppTextField<T> extends StatelessWidget {
   /// Force left-to-right for phone numbers, card numbers, codes.
   final TextDirection? textDirection;
 
+  final bool autofocus;
+
   /// The 64pt phone input of the sign in screens (18pt text).
   final bool large;
 
@@ -51,11 +54,15 @@ class AppTextField<T> extends StatelessWidget {
     final palette = context.palette;
     final style = (large ? AppTextStyles.bodyLarge : AppTextStyles.body)
         .copyWith(color: palette.textBody);
+    final vertical = large
+        ? AppSpacing.inputVerticalLarge
+        : AppSpacing.inputVertical;
 
     return ReactiveTextField<T>(
       formControlName: formControlName,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
+      autofocus: autofocus,
       inputFormatters: inputFormatters,
       maxLength: maxLength,
       textAlign: textAlign,
@@ -67,14 +74,16 @@ class AppTextField<T> extends StatelessWidget {
         hintTextDirection: textDirection,
         hintStyle: large ? style.copyWith(color: palette.hint) : null,
         prefixIcon: prefix,
+        // The prefix brings its own spacing.
+        prefixIconConstraints: const BoxConstraints(),
         suffixIcon: suffix,
         counterText: '',
-        contentPadding: large
-            ? const EdgeInsetsDirectional.symmetric(
-                horizontal: AppSpacing.m,
-                vertical: AppSpacing.inputVerticalLarge,
-              )
-            : null,
+        contentPadding: EdgeInsetsDirectional.only(
+          start: prefix == null ? AppSpacing.m : 0,
+          end: AppSpacing.m,
+          top: vertical,
+          bottom: vertical,
+        ),
       ),
     );
   }

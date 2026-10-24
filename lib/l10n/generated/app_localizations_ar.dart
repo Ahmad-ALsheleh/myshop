@@ -45,6 +45,49 @@ class AppLocalizationsAr extends AppLocalizations {
   String get getStarted => 'ابدأ الآن';
 
   @override
+  String get onboardingSubtitle =>
+      'لوريم إيبسوم هو ببساطة نص شكلي يُستخدم في صناعة الطباعة والتنضيد';
+
+  @override
+  String get phoneTitle => 'ما هو رقم\nهاتفك؟';
+
+  @override
+  String get phoneSubtitle => 'يرجى إدخال رقم هاتفك للتحقق من حسابك';
+
+  @override
+  String get sendVerificationCode => 'إرسال رمز التحقق';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get selectCountry => 'اختر الدولة';
+
+  @override
+  String get verificationTitle => 'رمز\nالتحقق';
+
+  @override
+  String get verificationSubtitle => 'يرجى إدخال الرمز المرسل إلى';
+
+  @override
+  String get changePhoneNumber => 'تغيير رقم الهاتف';
+
+  @override
+  String get resendCode => 'إعادة إرسال الرمز';
+
+  @override
+  String get codeResent => 'تم إرسال رمز جديد';
+
+  @override
+  String get invalidCode => 'الرمز غير صحيح';
+
+  @override
+  String get validationPhone => 'أدخل رقم هاتف صحيحًا';
+
+  @override
+  String get validationCode => 'أدخل الرمز المكون من 4 أرقام';
+
+  @override
   String get searchHint => 'عمّ تبحث؟';
 
   @override

@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../mock/mock_countries.dart';
 import '../mock/mock_user.dart';
+import '../models/country.dart';
 import '../models/user.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>(
@@ -21,6 +23,9 @@ class AuthRepository {
   static const codeLength = 4;
 
   final Duration latency;
+
+  /// Countries of the phone number picker; the first one is the default.
+  List<Country> getCountries() => mockCountries;
 
   Future<void> sendCode(String phone) => Future<void>.delayed(latency);
 
