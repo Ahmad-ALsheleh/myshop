@@ -1,0 +1,21 @@
+{
+  "@@locale": "ar",
+  "appName": "MyShop",
+  "foundationPreviewTitle": "نظام التصميم",
+  "appearanceLabel": "المظهر",
+  "themeSystem": "النظام",
+  "themeLight": "فاتح",
+  "themeDark": "داكن",
+  "languageLabel": "اللغة",
+  "languageSystem": "النظام",
+  "languageEnglish": "English",
+  "languageArabic": "العربية",
+  "colorsLabel": "الألوان",
+  "typographyLabel": "الخطوط",
+  "directionLabel": "الاتجاه",
+  "directionStart": "البداية",
+  "directionEnd": "النهاية",
+  "sampleHeadline": "مميز",
+  "sampleProductName": "كارديغان نسائي محبوك بأكمام طويلة ومفتوح من الأمام",
+  "getStarted": "ابدأ الآن"
+}

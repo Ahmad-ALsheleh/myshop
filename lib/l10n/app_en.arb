@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "appName": "MyShop",
+  "foundationPreviewTitle": "Design System",
+  "appearanceLabel": "Appearance",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "languageLabel": "Language",
+  "languageSystem": "System",
+  "languageEnglish": "English",
+  "languageArabic": "العربية",
+  "colorsLabel": "Colors",
+  "typographyLabel": "Typography",
+  "directionLabel": "Direction",
+  "directionStart": "Start",
+  "directionEnd": "End",
+  "sampleHeadline": "Featured",
+  "sampleProductName": "Astylish Women Open Front Long Sleeve Chunky Knit Cardigan",
+  "getStarted": "Get Started"
+}
