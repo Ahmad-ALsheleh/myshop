@@ -456,7 +456,7 @@ const northfieldCableSweater = Product(
   images: ['$_images/northfield_sweater.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.gray,
+      color: ProductColor.white,
       image: '$_images/northfield_sweater.jpg',
     ),
   ],
@@ -519,8 +519,8 @@ const novaSmartphone = Product(
       image: '$_images/nova_phone_black.jpg',
     ),
     ProductColorOption(
-      color: ProductColor.blue,
-      image: '$_images/nova_phone_blue.jpg',
+      color: ProductColor.green,
+      image: '$_images/nova_phone_green.jpg',
     ),
   ],
   rating: 4.5,
@@ -632,7 +632,7 @@ const homaSmartSpeaker = Product(
   images: ['$_images/homa_speaker.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.white,
+      color: ProductColor.orange,
       image: '$_images/homa_speaker.jpg',
     ),
   ],

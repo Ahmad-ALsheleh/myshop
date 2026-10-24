@@ -13,8 +13,8 @@ const mockBanners = <PromoBanner>[
   ),
   PromoBanner(
     id: 'b2',
-    title: LocalizedText(en: "Men's Collection", ar: 'تشكيلة الرجال'),
-    image: '$_images/mens_collection.jpg',
+    title: LocalizedText(en: 'New Arrivals', ar: 'وصل حديثًا'),
+    image: '$_images/new_arrivals.jpg',
     categoryId: CategoryIds.mensFashion,
   ),
   PromoBanner(

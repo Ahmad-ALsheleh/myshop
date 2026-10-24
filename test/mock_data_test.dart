@@ -1,6 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:myshop/features/auth/data/mock/mock_user.dart';
 import 'package:myshop/features/catalogue/data/mock/mock_categories.dart';
+import 'package:myshop/features/checkout/data/mock/mock_delivery_methods.dart';
 import 'package:myshop/features/favorites/data/mock/mock_favorites.dart';
+import 'package:myshop/features/home/data/mock/mock_banners.dart';
 import 'package:myshop/features/product/data/mock/mock_products.dart';
 import 'package:myshop/features/product/data/mock/mock_reviews.dart';
 
@@ -44,6 +49,22 @@ void main() {
         expect(oldPrice, greaterThan(product.price), reason: product.id);
       }
     }
+  });
+
+  test('every image path of the mock data exists in assets/', () {
+    final paths = {
+      for (final p in mockProducts) ...[
+        ...p.images,
+        for (final option in p.colors) option.image,
+      ],
+      for (final c in mockCategories) c.image,
+      for (final b in mockBanners) b.image,
+      for (final m in mockDeliveryMethods) m.logo,
+      mockUser.avatar,
+    };
+
+    final missing = paths.where((path) => !File(path).existsSync());
+    expect(missing, isEmpty);
   });
 
   test('reviews and favorites refer to existing products', () {
