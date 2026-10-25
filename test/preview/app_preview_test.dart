@@ -3,7 +3,6 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:myshop/app.dart';
@@ -11,6 +10,8 @@ import 'package:myshop/core/router/app_router.dart';
 import 'package:myshop/core/router/app_routes.dart';
 import 'package:myshop/core/storage/preferences_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../helpers/load_fonts.dart';
 
 /// Renders the app at the design size (375 x 812 @2x, iPhone X insets) into
 /// `build/preview/*.png`, to compare with the PNGs of the design.
@@ -20,7 +21,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 const _enabled = bool.fromEnvironment('PREVIEW');
 
 void main() {
-  setUpAll(_loadFonts);
+  setUpAll(loadAppFonts);
 
   const light = <String, Object>{'theme_mode': 'light', 'locale': 'en'};
   const darkAr = <String, Object>{'theme_mode': 'dark', 'locale': 'ar'};
@@ -134,28 +135,4 @@ Future<void> _render(
     file.writeAsBytesSync(bytes!.buffer.asUint8List());
   });
   debugDisableShadows = true;
-}
-
-/// Widget tests use a placeholder font unless the real ones are loaded.
-Future<void> _loadFonts() async {
-  final families = {
-    'Inter': ['Regular', 'Medium', 'SemiBold', 'Bold'],
-    'Tajawal': ['Regular', 'Medium', 'Bold', 'ExtraBold'],
-    'Montserrat': ['SemiBold', 'Bold'],
-  };
-  for (final MapEntry(key: family, value: weights) in families.entries) {
-    final loader = FontLoader(family);
-    for (final weight in weights) {
-      loader.addFont(rootBundle.load('assets/fonts/$family-$weight.ttf'));
-    }
-    await loader.load();
-  }
-
-  final icons = File(
-    '${Platform.environment['FLUTTER_ROOT']}/bin/cache/artifacts/'
-    'material_fonts/MaterialIcons-Regular.otf',
-  );
-  await (FontLoader('MaterialIcons')
-        ..addFont(Future.value(ByteData.sublistView(icons.readAsBytesSync()))))
-      .load();
 }

@@ -96,6 +96,7 @@ abstract final class AppSizes {
   // Bottom navigation + cart pill
   static const double navBarHeight = 53;
   static const double navItemGap = 22;
+  static const double navLabelHeight = 14.4; // 12pt x 1.2
   static const double cartPillWidth = 115;
   static const double cartPillHeight = 56;
   static const double cartPillRise = 11; // how far it sticks out above the bar

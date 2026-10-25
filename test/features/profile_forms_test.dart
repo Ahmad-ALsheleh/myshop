@@ -56,7 +56,10 @@ void main() {
     await tester.enterText(fields.at(3), '123');
     await tester.tap(find.text('Save'));
     await frames(tester);
-    expect(find.text('Enter a valid Visa or Mastercard number'), findsOneWidget);
+    expect(
+      find.text('Enter a valid Visa or Mastercard number'),
+      findsOneWidget,
+    );
 
     await tester.enterText(fields.at(0), '4111111111111111');
     expect(find.text('4111 1111 1111 1111'), findsOneWidget);

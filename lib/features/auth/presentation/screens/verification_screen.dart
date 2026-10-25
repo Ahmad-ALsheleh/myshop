@@ -102,9 +102,11 @@ class _VerificationScreenState extends ConsumerState<VerificationScreen> {
                       ),
                     ),
                     const SizedBox(height: AuthDimens.phoneLineGap),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
+                    // Goes on two lines when the text is too big for one.
+                    Wrap(
+                      alignment: WrapAlignment.spaceBetween,
+                      crossAxisAlignment: WrapCrossAlignment.end,
+                      runSpacing: AppSpacing.xxs,
                       children: [
                         Text(
                           widget.phone,
@@ -114,7 +116,6 @@ class _VerificationScreenState extends ConsumerState<VerificationScreen> {
                             color: palette.textPrimary,
                           ),
                         ),
-                        const Spacer(),
                         GestureDetector(
                           onTap: () => Navigator.maybePop(context),
                           child: Text(

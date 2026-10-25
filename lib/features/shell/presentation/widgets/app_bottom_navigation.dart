@@ -59,21 +59,25 @@ class AppBottomNavigation extends StatelessWidget {
                 ),
                 boxShadow: AppShadows.raised(palette),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: AppSizes.navItemGap,
-                children: [
-                  for (final (index, (icon, activeIcon, label)) in tabs.indexed)
-                    Flexible(
-                      child: _NavItem(
+              // Very narrow screens scale the whole row down.
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: AlignmentDirectional.topStart,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: AppSizes.navItemGap,
+                  children: [
+                    for (final (index, (icon, activeIcon, label))
+                        in tabs.indexed)
+                      _NavItem(
                         icon: icon,
                         activeIcon: activeIcon,
                         label: label,
                         isActive: index == currentIndex,
                         onTap: () => onTabSelected(index),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -120,17 +124,21 @@ class _NavItem extends StatelessWidget {
               GradientIcon(activeIcon)
             else
               Icon(icon, size: AppSizes.icon, color: palette.textSecondary),
-            // Long labels (narrow screens, big text) shrink instead of
-            // overflowing.
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                label,
-                maxLines: 1,
-                style: AppTextStyles.caption.copyWith(
-                  height: 1.2,
-                  fontWeight: FontWeight.w600,
-                  color: isActive ? palette.textPrimary : palette.textSecondary,
+            // Big text shrinks into the label line instead of overflowing.
+            SizedBox(
+              height: AppSizes.navLabelHeight,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  style: AppTextStyles.caption.copyWith(
+                    height: 1.2,
+                    fontWeight: FontWeight.w600,
+                    color: isActive
+                        ? palette.textPrimary
+                        : palette.textSecondary,
+                  ),
                 ),
               ),
             ),

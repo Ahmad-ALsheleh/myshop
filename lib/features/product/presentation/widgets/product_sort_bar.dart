@@ -44,41 +44,53 @@ class ProductSortBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.baseline,
       textBaseline: TextBaseline.alphabetic,
       children: [
-        Text(
-          l10n.itemsCount(count),
-          style: AppTextStyles.headline.copyWith(color: palette.textPrimary),
+        Flexible(
+          child: Text(
+            l10n.itemsCount(count),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.headline.copyWith(color: palette.textPrimary),
+          ),
         ),
+        const SizedBox(width: AppSpacing.xs),
         const Spacer(),
-        GestureDetector(
-          onTap: () => _pickSort(context),
-          behavior: HitTestBehavior.opaque,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-            children: [
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(text: '${l10n.sortBy} '),
+        Flexible(
+          flex: 3,
+          child: GestureDetector(
+            onTap: () => _pickSort(context),
+            behavior: HitTestBehavior.opaque,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                Flexible(
+                  child: Text.rich(
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     TextSpan(
-                      text: sort.label(context),
-                      style: TextStyle(
-                        color: palette.textPrimary,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      children: [
+                        TextSpan(text: '${l10n.sortBy} '),
+                        TextSpan(
+                          text: sort.label(context),
+                          style: TextStyle(
+                            color: palette.textPrimary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                    style: AppTextStyles.bodySmall.copyWith(
+                      color: palette.textSecondary,
+                    ),
+                  ),
                 ),
-                style: AppTextStyles.bodySmall.copyWith(
-                  color: palette.textSecondary,
+                Icon(
+                  Icons.keyboard_arrow_down,
+                  size: AppSizes.chevron,
+                  color: palette.textPrimary,
                 ),
-              ),
-              Icon(
-                Icons.keyboard_arrow_down,
-                size: AppSizes.chevron,
-                color: palette.textPrimary,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],
