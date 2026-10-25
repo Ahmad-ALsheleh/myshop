@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:myshop/core/utils/phone_mask.dart';
+import 'package:myshop/core/utils/digit_mask.dart';
 
 void main() {
-  const mask = PhoneMask('(##) ### ## ##');
+  const mask = DigitMask('(##) ### ## ##');
 
   test('lays digits on the mask as they are typed', () {
     expect(mask.apply('9'), '(9');

@@ -11,6 +11,7 @@ abstract final class AppColors {
   static const accent = Color(0xFFE7B844);
   static const brandLink = Color(0xFF5A426D);
   static const darkBrandLink = Color(0xFFB79AD0);
+  static const darkIconLight = Color(0xFFE3CFF2);
 
   // Light surfaces & text
   static const lightBackground = Color(0xFFF3F3F3);

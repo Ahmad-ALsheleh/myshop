@@ -12,7 +12,7 @@ class GradientIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gradient = context.palette.brandGradient;
+    final gradient = context.palette.iconGradient;
     return ShaderMask(
       blendMode: BlendMode.srcIn,
       shaderCallback: gradient.createShader,

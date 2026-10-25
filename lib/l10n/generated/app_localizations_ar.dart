@@ -470,4 +470,84 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get done => 'تم';
+
+  @override
+  String get addAddress => 'إضافة عنوان';
+
+  @override
+  String get editAddress => 'تعديل العنوان';
+
+  @override
+  String get fullNameLabel => 'الاسم الكامل';
+
+  @override
+  String get streetLabel => 'الشارع والرقم';
+
+  @override
+  String get cityLabel => 'المدينة';
+
+  @override
+  String get regionLabel => 'الولاية / المنطقة';
+
+  @override
+  String get zipCodeLabel => 'الرمز البريدي';
+
+  @override
+  String get countryLabel => 'الدولة';
+
+  @override
+  String get setAsDefault => 'استخدامه كافتراضي';
+
+  @override
+  String get defaultBadge => 'افتراضي';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get deleteAddressConfirm => 'هل تريد حذف هذا العنوان؟';
+
+  @override
+  String get noAddresses => 'لا توجد عناوين محفوظة';
+
+  @override
+  String get addCard => 'إضافة بطاقة';
+
+  @override
+  String get cardNumberLabel => 'رقم البطاقة';
+
+  @override
+  String get cardHolderLabel => 'الاسم على البطاقة';
+
+  @override
+  String get expiryLabel => 'تاريخ الانتهاء (MM/YY)';
+
+  @override
+  String get cvvLabel => 'رمز CVV';
+
+  @override
+  String get validationCardNumber => 'أدخل رقم بطاقة Visa أو Mastercard صحيحًا';
+
+  @override
+  String get validationExpiry => 'أدخل تاريخًا صحيحًا في المستقبل';
+
+  @override
+  String get validationCvv => 'أدخل الأرقام الثلاثة على ظهر البطاقة';
+
+  @override
+  String get deleteCardConfirm => 'هل تريد حذف هذه البطاقة؟';
+
+  @override
+  String get noCards => 'لا توجد بطاقات محفوظة';
+
+  @override
+  String expires(String date) {
+    return 'تنتهي في $date';
+  }
+
+  @override
+  String get nameLabel => 'الاسم';
 }

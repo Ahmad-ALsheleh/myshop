@@ -9,6 +9,7 @@ import '../../../../core/theme/app_shadows.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/price_formatter.dart';
 import '../../../../core/widgets/bottom_panel.dart';
+import '../../../../core/widgets/confirm_dialog.dart';
 import '../../../../core/widgets/empty_state.dart';
 import '../../../../core/widgets/gradient_header.dart';
 import '../../../../core/widgets/primary_button.dart';
@@ -24,23 +25,12 @@ class CartScreen extends ConsumerWidget {
 
   Future<void> _confirmClear(BuildContext context, WidgetRef ref) async {
     final l10n = context.l10n;
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        content: Text(l10n.clearCartConfirm),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text(l10n.cancel),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(l10n.delete),
-          ),
-        ],
-      ),
+    final confirmed = await showConfirmDialog(
+      context,
+      message: l10n.clearCartConfirm,
+      confirmLabel: l10n.delete,
     );
-    if (confirmed ?? false) ref.read(cartProvider.notifier).clear();
+    if (confirmed) ref.read(cartProvider.notifier).clear();
   }
 
   @override

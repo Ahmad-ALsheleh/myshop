@@ -25,6 +25,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     required this.imageOverlay,
     required this.brandGradient,
     required this.saleBadgeGradient,
+    required this.iconGradient,
   });
 
   final Color background;
@@ -54,6 +55,9 @@ class AppPalette extends ThemeExtension<AppPalette> {
 
   /// Purple gradient used by headers, the cart pill and the success popup.
   final LinearGradient brandGradient;
+
+  /// Gradient of the outlined icons (lighter in dark mode for contrast).
+  final LinearGradient iconGradient;
 
   /// Red-to-orange gradient of the "-50%" badge.
   final LinearGradient saleBadgeGradient;
@@ -89,6 +93,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     imageOverlay: AppColors.imageOverlay,
     brandGradient: _brandGradient,
     saleBadgeGradient: _saleBadgeGradient,
+    iconGradient: _brandGradient,
   );
 
   static const dark = AppPalette(
@@ -109,6 +114,11 @@ class AppPalette extends ThemeExtension<AppPalette> {
     imageOverlay: AppColors.imageOverlay,
     brandGradient: _brandGradient,
     saleBadgeGradient: _saleBadgeGradient,
+    iconGradient: LinearGradient(
+      begin: Alignment.bottomLeft,
+      end: Alignment.topRight,
+      colors: [AppColors.darkBrandLink, AppColors.darkIconLight],
+    ),
   );
 
   @override
@@ -130,6 +140,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     Color? imageOverlay,
     LinearGradient? brandGradient,
     LinearGradient? saleBadgeGradient,
+    LinearGradient? iconGradient,
   }) {
     return AppPalette(
       background: background ?? this.background,
@@ -149,6 +160,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
       imageOverlay: imageOverlay ?? this.imageOverlay,
       brandGradient: brandGradient ?? this.brandGradient,
       saleBadgeGradient: saleBadgeGradient ?? this.saleBadgeGradient,
+      iconGradient: iconGradient ?? this.iconGradient,
     );
   }
 
@@ -181,6 +193,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
         other.saleBadgeGradient,
         t,
       )!,
+      iconGradient: LinearGradient.lerp(iconGradient, other.iconGradient, t)!,
     );
   }
 }

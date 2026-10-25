@@ -39,3 +39,11 @@ class PaymentCard implements Defaultable<PaymentCard> {
     isDefault: isDefault,
   );
 }
+
+/// Network of a card number from its first digit, `null` when unsupported.
+CardNetwork? cardNetworkOf(String digits) =>
+    switch (digits.isEmpty ? '' : digits[0]) {
+      '4' => CardNetwork.visa,
+      '5' => CardNetwork.mastercard,
+      _ => null,
+    };

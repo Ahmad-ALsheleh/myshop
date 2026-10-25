@@ -1,14 +1,15 @@
 import 'package:flutter/services.dart';
 
-/// A phone number layout where `#` is a digit, e.g. `(##) ### ## ##`.
-class PhoneMask {
-  const PhoneMask(this.pattern);
+/// A layout for digits where `#` is a digit: phone numbers
+/// `(##) ### ## ##`, card numbers `#### #### #### ####`, expiry `##/##`.
+class DigitMask {
+  const DigitMask(this.pattern);
 
   final String pattern;
 
   static const _digit = '#';
 
-  /// How many digits a complete number has.
+  /// How many digits a complete value has.
   int get length => _digit.allMatches(pattern).length;
 
   static String digitsOf(String text) => text.replaceAll(RegExp(r'\D'), '');
@@ -32,13 +33,13 @@ class PhoneMask {
   bool isComplete(String? text) => digitsOf(text ?? '').length == length;
 
   /// Formats the input while typing; extra digits are ignored.
-  TextInputFormatter get formatter => _PhoneMaskFormatter(this);
+  TextInputFormatter get formatter => _DigitMaskFormatter(this);
 }
 
-class _PhoneMaskFormatter extends TextInputFormatter {
-  const _PhoneMaskFormatter(this.mask);
+class _DigitMaskFormatter extends TextInputFormatter {
+  const _DigitMaskFormatter(this.mask);
 
-  final PhoneMask mask;
+  final DigitMask mask;
 
   @override
   TextEditingValue formatEditUpdate(

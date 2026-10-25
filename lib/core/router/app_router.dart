@@ -16,8 +16,13 @@ import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_provider.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/product/presentation/screens/product_screen.dart';
+import '../../features/profile/presentation/screens/address_form_screen.dart';
+import '../../features/profile/presentation/screens/addresses_screen.dart';
+import '../../features/profile/presentation/screens/card_form_screen.dart';
 import '../../features/profile/presentation/screens/orders_screen.dart';
+import '../../features/profile/presentation/screens/payment_methods_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/profile/presentation/screens/settings_screen.dart';
 import '../../features/shell/presentation/screens/shell_screen.dart';
 import 'app_routes.dart';
 
@@ -104,6 +109,28 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.orders,
         builder: (context, state) => const OrdersScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.settings,
+        builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.addresses,
+        builder: (context, state) => const AddressesScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.addressForm,
+        builder: (context, state) => AddressFormScreen(
+          addressId: state.uri.queryParameters[AppRoutes.addressIdParam],
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.paymentMethods,
+        builder: (context, state) => const PaymentMethodsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.cardForm,
+        builder: (context, state) => const CardFormScreen(),
       ),
     ],
   );

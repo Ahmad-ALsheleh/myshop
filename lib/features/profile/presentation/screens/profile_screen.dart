@@ -6,10 +6,12 @@ import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_dimens.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/confirm_dialog.dart';
 import '../../../../core/widgets/menu_tile.dart';
 import '../../../auth/data/models/country.dart';
 import '../../../auth/presentation/providers/session_provider.dart';
 import '../../../auth/presentation/providers/sign_in_providers.dart';
+import '../widgets/edit_profile_sheet.dart';
 import '../widgets/profile_header.dart';
 
 /// Profile tab: header with the user and the menu.
@@ -18,23 +20,12 @@ class ProfileScreen extends ConsumerWidget {
 
   Future<void> _confirmLogOut(BuildContext context, WidgetRef ref) async {
     final l10n = context.l10n;
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        content: Text(l10n.logOutConfirm),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text(l10n.cancel),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(l10n.logOut),
-          ),
-        ],
-      ),
+    final confirmed = await showConfirmDialog(
+      context,
+      message: l10n.logOutConfirm,
+      confirmLabel: l10n.logOut,
     );
-    if (confirmed ?? false) await ref.read(sessionProvider.notifier).signOut();
+    if (confirmed) await ref.read(sessionProvider.notifier).signOut();
   }
 
   void _showPrivacyPolicy(BuildContext context) {
@@ -67,9 +58,16 @@ class ProfileScreen extends ConsumerWidget {
         ProfileDimens.privacyBottom;
 
     final menu = [
-      // The next screens are connected when they are built.
-      (Icons.location_on_outlined, l10n.shippingAddresses, null),
-      (Icons.credit_card_outlined, l10n.paymentMethods, null),
+      (
+        Icons.location_on_outlined,
+        l10n.shippingAddresses,
+        () => context.push(AppRoutes.addresses),
+      ),
+      (
+        Icons.credit_card_outlined,
+        l10n.paymentMethods,
+        () => context.push(AppRoutes.paymentMethods),
+      ),
       (
         Icons.assignment_outlined,
         l10n.orders,
@@ -80,7 +78,11 @@ class ProfileScreen extends ConsumerWidget {
         l10n.navFavorite,
         () => context.go(AppRoutes.favorites),
       ),
-      (Icons.settings_outlined, l10n.settings, null),
+      (
+        Icons.settings_outlined,
+        l10n.settings,
+        () => context.push(AppRoutes.settings),
+      ),
       if (user == null)
         (
           Icons.login,
@@ -108,7 +110,9 @@ class ProfileScreen extends ConsumerWidget {
                               .watch(countriesProvider)
                               .displayNumber(user.phone),
                     avatar: user?.avatar,
-                    onEdit: user == null ? null : () {},
+                    onEdit: user == null
+                        ? null
+                        : () => showEditProfileSheet(context, user.name),
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(

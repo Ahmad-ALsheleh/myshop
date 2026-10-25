@@ -919,6 +919,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Done'**
   String get done;
+
+  /// No description provided for @addAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Add address'**
+  String get addAddress;
+
+  /// No description provided for @editAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit address'**
+  String get editAddress;
+
+  /// No description provided for @fullNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get fullNameLabel;
+
+  /// No description provided for @streetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Street and number'**
+  String get streetLabel;
+
+  /// No description provided for @cityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get cityLabel;
+
+  /// No description provided for @regionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'State / region'**
+  String get regionLabel;
+
+  /// No description provided for @zipCodeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'ZIP code'**
+  String get zipCodeLabel;
+
+  /// No description provided for @countryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get countryLabel;
+
+  /// No description provided for @setAsDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Use as default'**
+  String get setAsDefault;
+
+  /// No description provided for @defaultBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get defaultBadge;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @deleteAddressConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this address?'**
+  String get deleteAddressConfirm;
+
+  /// No description provided for @noAddresses.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved addresses'**
+  String get noAddresses;
+
+  /// No description provided for @addCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Add card'**
+  String get addCard;
+
+  /// No description provided for @cardNumberLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Card number'**
+  String get cardNumberLabel;
+
+  /// No description provided for @cardHolderLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name on card'**
+  String get cardHolderLabel;
+
+  /// No description provided for @expiryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry (MM/YY)'**
+  String get expiryLabel;
+
+  /// No description provided for @cvvLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'CVV'**
+  String get cvvLabel;
+
+  /// No description provided for @validationCardNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid Visa or Mastercard number'**
+  String get validationCardNumber;
+
+  /// No description provided for @validationExpiry.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid date in the future'**
+  String get validationExpiry;
+
+  /// No description provided for @validationCvv.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the 3 digits on the back of the card'**
+  String get validationCvv;
+
+  /// No description provided for @deleteCardConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this card?'**
+  String get deleteCardConfirm;
+
+  /// No description provided for @noCards.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved cards'**
+  String get noCards;
+
+  /// No description provided for @expires.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires {date}'**
+  String expires(String date);
+
+  /// No description provided for @nameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get nameLabel;
 }
 
 class _AppLocalizationsDelegate

@@ -1,13 +1,13 @@
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../l10n/generated/app_localizations.dart';
-import '../utils/phone_mask.dart';
+import '../utils/digit_mask.dart';
 
 /// Error key of [phoneValidator].
 const phoneValidationKey = 'phone';
 
 /// Valid when the number has all the digits of [mask].
-Validator<dynamic> phoneValidator(PhoneMask mask) => Validators.delegate(
+Validator<dynamic> phoneValidator(DigitMask mask) => Validators.delegate(
   (control) => mask.isComplete(control.value as String?)
       ? null
       : {phoneValidationKey: true},

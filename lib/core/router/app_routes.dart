@@ -24,6 +24,18 @@ abstract final class AppRoutes {
   static const cart = '/cart';
   static const checkout = '/checkout';
   static const orders = '/orders';
+  static const settings = '/settings';
+  static const addresses = '/addresses';
+  static const addressForm = '/addresses/form';
+  static const addressIdParam = 'id';
+  static const paymentMethods = '/payment-methods';
+  static const cardForm = '/payment-methods/new';
+
+  /// New address when [addressId] is `null`.
+  static String addressFormOf(String? addressId) => Uri(
+    path: addressForm,
+    queryParameters: addressId == null ? null : {addressIdParam: addressId},
+  ).toString();
 
   static String verificationOf(String phone) => Uri(
     path: verification,

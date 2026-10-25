@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../../../../core/l10n/localized_text.dart';
-import '../../../../core/utils/phone_mask.dart';
+import '../../../../core/utils/digit_mask.dart';
 
 /// A country of the phone number picker.
 @immutable
@@ -22,11 +22,11 @@ class Country {
 
   /// Emoji flag.
   final String flag;
-  final PhoneMask mask;
+  final DigitMask mask;
 
   /// "+380" + digits without spaces: "+380991234567".
   String fullNumber(String localNumber) =>
-      '$dialCode${PhoneMask.digitsOf(localNumber)}';
+      '$dialCode${DigitMask.digitsOf(localNumber)}';
 }
 
 extension CountryLookup on List<Country> {

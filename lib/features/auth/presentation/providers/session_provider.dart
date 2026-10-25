@@ -23,13 +23,16 @@ final canEnterAppProvider = Provider<bool>(
 
 class SessionNotifier extends Notifier<User?> {
   static const _phoneKey = 'session_phone';
+  static const _nameKey = 'session_name';
 
   @override
   User? build() {
-    final phone = ref.read(sharedPreferencesProvider).getString(_phoneKey);
-    return phone == null
-        ? null
-        : ref.watch(authRepositoryProvider).userFor(phone);
+    final prefs = ref.read(sharedPreferencesProvider);
+    final phone = prefs.getString(_phoneKey);
+    if (phone == null) return null;
+    final user = ref.watch(authRepositoryProvider).userFor(phone);
+    final name = prefs.getString(_nameKey);
+    return name == null ? user : user.copyWith(name: name);
   }
 
   /// Verifies the code and signs in.
@@ -44,10 +47,19 @@ class SessionNotifier extends Notifier<User?> {
     await ref.read(guestModeProvider.notifier).set(false);
   }
 
+  /// Edit profile: the new name is kept across restarts.
+  Future<void> updateName(String name) async {
+    final user = state;
+    if (user == null) return;
+    state = user.copyWith(name: name);
+    await ref.read(sharedPreferencesProvider).setString(_nameKey, name);
+  }
+
   /// Back to the phone screen (also ends the guest mode).
   Future<void> signOut() async {
     state = null;
     await ref.read(sharedPreferencesProvider).remove(_phoneKey);
+    await ref.read(sharedPreferencesProvider).remove(_nameKey);
     await ref.read(guestModeProvider.notifier).set(false);
   }
 }

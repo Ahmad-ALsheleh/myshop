@@ -461,4 +461,84 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get done => 'Done';
+
+  @override
+  String get addAddress => 'Add address';
+
+  @override
+  String get editAddress => 'Edit address';
+
+  @override
+  String get fullNameLabel => 'Full name';
+
+  @override
+  String get streetLabel => 'Street and number';
+
+  @override
+  String get cityLabel => 'City';
+
+  @override
+  String get regionLabel => 'State / region';
+
+  @override
+  String get zipCodeLabel => 'ZIP code';
+
+  @override
+  String get countryLabel => 'Country';
+
+  @override
+  String get setAsDefault => 'Use as default';
+
+  @override
+  String get defaultBadge => 'Default';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get deleteAddressConfirm => 'Delete this address?';
+
+  @override
+  String get noAddresses => 'No saved addresses';
+
+  @override
+  String get addCard => 'Add card';
+
+  @override
+  String get cardNumberLabel => 'Card number';
+
+  @override
+  String get cardHolderLabel => 'Name on card';
+
+  @override
+  String get expiryLabel => 'Expiry (MM/YY)';
+
+  @override
+  String get cvvLabel => 'CVV';
+
+  @override
+  String get validationCardNumber => 'Enter a valid Visa or Mastercard number';
+
+  @override
+  String get validationExpiry => 'Enter a valid date in the future';
+
+  @override
+  String get validationCvv => 'Enter the 3 digits on the back of the card';
+
+  @override
+  String get deleteCardConfirm => 'Delete this card?';
+
+  @override
+  String get noCards => 'No saved cards';
+
+  @override
+  String expires(String date) {
+    return 'Expires $date';
+  }
+
+  @override
+  String get nameLabel => 'Name';
 }

@@ -56,6 +56,8 @@ void main() {
     ('cart_light_en', {...light, ...inApp}, AppRoutes.cart, 812),
     ('checkout_light_en', {...light, ...inApp}, AppRoutes.checkout, 812),
     ('checkout_dark_ar', {...darkAr, ...inApp}, AppRoutes.checkout, 812),
+    ('addresses_light_en', {...light, ...inApp}, AppRoutes.addresses, 812),
+    ('settings_dark_ar', {...darkAr, ...inApp}, AppRoutes.settings, 812),
     ('onboarding_light_en', light, null, 812),
     ('onboarding_dark_ar', darkAr, null, 812),
     ('phone_light_en', {...light, ...signedOut}, null, 812),
