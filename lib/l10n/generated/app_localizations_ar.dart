@@ -39,9 +39,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get colorsLabel => 'الألوان';
 
   @override
-  String get sampleHeadline => 'مميز';
-
-  @override
   String get getStarted => 'ابدأ الآن';
 
   @override
@@ -208,4 +205,89 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get validationPattern => 'الصيغة غير صحيحة';
+
+  @override
+  String get featured => 'مميز';
+
+  @override
+  String get seeMore => 'عرض المزيد';
+
+  @override
+  String get menu => 'القائمة';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get noNotifications => 'لا توجد إشعارات جديدة';
+
+  @override
+  String get filter => 'الفلتر';
+
+  @override
+  String get all => 'الكل';
+
+  @override
+  String get sortBy => 'ترتيب حسب:';
+
+  @override
+  String get sortFeatured => 'المميزة';
+
+  @override
+  String get sortPriceLowToHigh => 'السعر: من الأقل إلى الأعلى';
+
+  @override
+  String get sortPriceHighToLow => 'السعر: من الأعلى إلى الأقل';
+
+  @override
+  String get sortTopRated => 'الأعلى تقييمًا';
+
+  @override
+  String get noProducts => 'لا توجد منتجات';
+
+  @override
+  String get searchPrompt => 'اكتب للبحث في كل المنتجات';
+
+  @override
+  String get search => 'البحث';
+
+  @override
+  String get noFavorites => 'لا توجد منتجات مفضلة بعد';
+
+  @override
+  String get guest => 'زائر';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get shippingAddresses => 'عناوين الشحن';
+
+  @override
+  String get paymentMethods => 'طرق الدفع';
+
+  @override
+  String get orders => 'الطلبات';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get logOut => 'تسجيل الخروج';
+
+  @override
+  String get signIn => 'تسجيل الدخول';
+
+  @override
+  String get logOutConfirm => 'هل تريد تسجيل الخروج؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get privacyPolicyBody =>
+      'MyShop تطبيق تجريبي: بياناتك لا تغادر هذا الجهاز. رقم الهاتف والإعدادات التي تدخلها تُحفظ محليًا فقط لإبقائك مسجلًا للدخول.';
 }

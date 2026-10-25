@@ -21,6 +21,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     required this.rating,
     required this.success,
     required this.shadow,
+    required this.imageOverlay,
     required this.brandGradient,
     required this.saleBadgeGradient,
   });
@@ -43,6 +44,9 @@ class AppPalette extends ThemeExtension<AppPalette> {
   final Color rating;
   final Color success;
   final Color shadow;
+
+  /// Darkens photos under white text (banner, category tiles).
+  final Color imageOverlay;
 
   /// Purple gradient used by headers, the cart pill and the success popup.
   final LinearGradient brandGradient;
@@ -77,6 +81,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     rating: AppColors.rating,
     success: AppColors.success,
     shadow: Color(0x0F000000),
+    imageOverlay: AppColors.imageOverlay,
     brandGradient: _brandGradient,
     saleBadgeGradient: _saleBadgeGradient,
   );
@@ -95,6 +100,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     rating: AppColors.rating,
     success: AppColors.success,
     shadow: Color(0x40000000),
+    imageOverlay: AppColors.imageOverlay,
     brandGradient: _brandGradient,
     saleBadgeGradient: _saleBadgeGradient,
   );
@@ -114,6 +120,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
     Color? rating,
     Color? success,
     Color? shadow,
+    Color? imageOverlay,
     LinearGradient? brandGradient,
     LinearGradient? saleBadgeGradient,
   }) {
@@ -131,6 +138,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
       rating: rating ?? this.rating,
       success: success ?? this.success,
       shadow: shadow ?? this.shadow,
+      imageOverlay: imageOverlay ?? this.imageOverlay,
       brandGradient: brandGradient ?? this.brandGradient,
       saleBadgeGradient: saleBadgeGradient ?? this.saleBadgeGradient,
     );
@@ -153,6 +161,7 @@ class AppPalette extends ThemeExtension<AppPalette> {
       rating: Color.lerp(rating, other.rating, t)!,
       success: Color.lerp(success, other.success, t)!,
       shadow: Color.lerp(shadow, other.shadow, t)!,
+      imageOverlay: Color.lerp(imageOverlay, other.imageOverlay, t)!,
       brandGradient: LinearGradient.lerp(
         brandGradient,
         other.brandGradient,

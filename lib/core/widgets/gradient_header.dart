@@ -124,14 +124,17 @@ class HeaderIconButton extends StatelessWidget {
 
 /// Back arrow; flips in Arabic.
 class HeaderBackButton extends StatelessWidget {
-  const HeaderBackButton({super.key});
+  const HeaderBackButton({super.key, this.onPressed});
+
+  /// Defaults to going back one page.
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return HeaderIconButton(
       icon: Icons.arrow_back,
       tooltip: context.l10n.back,
-      onPressed: () => Navigator.maybePop(context),
+      onPressed: onPressed ?? () => Navigator.maybePop(context),
     );
   }
 }

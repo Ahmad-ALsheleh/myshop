@@ -23,6 +23,34 @@ abstract final class AppTextStyles {
     height: 1.3,
   );
 
+  /// Title of the home banner ("Fashion Sale").
+  static const bannerTitle = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    height: 1.2,
+  );
+
+  /// Category name over the home tiles.
+  static const tileLabel = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+  );
+
+  /// Category names on the catalogue screen.
+  static const title = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w700,
+    height: 1.3,
+  );
+
+  /// Rows of the profile menu ("Shipping Addresses"...).
+  static const menuItem = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    height: 1.3,
+  );
+
   /// Labels of the 48pt buttons.
   static const button = TextStyle(
     fontSize: 17,
@@ -46,9 +74,9 @@ abstract final class AppTextStyles {
 
   /// Product names, descriptions, input text, size chips.
   static const body = TextStyle(
-    fontSize: 15,
+    fontSize: 14.5, // same cap height as the 15pt SF Pro of the design
     fontWeight: FontWeight.w400,
-    height: 1.27, // 19pt lines
+    height: 1.31, // 19pt lines
   );
 
   /// Search placeholder, crossed-out old price.

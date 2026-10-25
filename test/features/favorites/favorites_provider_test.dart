@@ -11,9 +11,9 @@ void main() {
 
   test('starts with the 5 favorites of the design, lowest price first', () {
     expect(container.read(favoriteProductsProvider), [
-      larkRoJeggings,
-      larkRoSkirt,
       saodimallsuTurtleneck,
+      larkRoSkirt,
+      larkRoJeggings,
       larkRoSwingDress,
       astylishCardigan,
     ]);

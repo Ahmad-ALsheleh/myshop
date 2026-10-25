@@ -34,4 +34,5 @@ abstract final class AppColors {
   static const rating = Color(0xFFF2994A);
   static const success = Color(0xFF46AB62);
   static const white = Color(0xFFFFFFFF);
+  static const imageOverlay = Color(0x59000000); // 35% black over photos
 }

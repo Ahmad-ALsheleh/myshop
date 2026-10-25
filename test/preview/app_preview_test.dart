@@ -26,11 +26,26 @@ void main() {
   const darkAr = <String, Object>{'theme_mode': 'dark', 'locale': 'ar'};
   const inApp = <String, Object>{'onboarding_seen': true, 'guest_mode': true};
   const signedOut = <String, Object>{'onboarding_seen': true};
+  const signedIn = <String, Object>{
+    'onboarding_seen': true,
+    'session_phone': '+380991234567',
+  };
 
   // name, saved preferences, route (null = where the app starts), height
   final screens = <(String, Map<String, Object>, String?, double)>[
-    ('gallery_light_en', {...light, ...inApp}, null, 1900),
-    ('gallery_dark_ar', {...darkAr, ...inApp}, null, 1900),
+    ('home_light_en', {...light, ...inApp}, null, 812),
+    ('home_full_light_en', {...light, ...inApp}, null, 1250),
+    ('home_dark_ar', {...darkAr, ...inApp}, null, 812),
+    ('catalogue_light_en', {...light, ...inApp}, AppRoutes.catalogue, 812),
+    (
+      'items_light_en',
+      {...light, ...inApp},
+      AppRoutes.categoryItemsOf('womens-fashion'),
+      1530,
+    ),
+    ('favorites_light_en', {...light, ...inApp}, AppRoutes.favorites, 1100),
+    ('profile_light_en', {...light, ...signedIn}, AppRoutes.profile, 812),
+    ('profile_dark_ar', {...darkAr, ...signedIn}, AppRoutes.profile, 812),
     ('onboarding_light_en', light, null, 812),
     ('onboarding_dark_ar', darkAr, null, 812),
     ('phone_light_en', {...light, ...signedOut}, null, 812),
@@ -93,6 +108,8 @@ Future<void> _render(
     for (final element in find.byType(Image).evaluate()) {
       await precacheImage((element.widget as Image).image, element);
     }
+    // Images painted by decorations (avatars) load on their own.
+    await Future<void>.delayed(const Duration(milliseconds: 300));
   });
   await tester.pump(const Duration(milliseconds: 500));
 

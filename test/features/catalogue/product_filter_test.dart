@@ -35,6 +35,8 @@ void main() {
       saodimallsuTurtleneck.id,
       jouicaSweater.id,
       biuclyHoodie.id,
+      larkRoSkirt.id,
+      larkRoJeggings.id,
       larkRoSwingDress.id,
     ]);
   });

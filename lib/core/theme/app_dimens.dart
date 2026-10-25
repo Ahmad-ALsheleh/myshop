@@ -15,6 +15,9 @@ abstract final class AppSpacing {
   /// Gap between the two columns of product cards.
   static const double cardGap = 17;
 
+  /// Gap between two rows of product cards.
+  static const double cardRowGap = 23.5;
+
   /// Vertical padding of a 48pt input with 15pt text.
   static const double inputVertical = 14;
 
@@ -73,6 +76,7 @@ abstract final class AppSizes {
   static const double loader = 20;
   static const double cartPillIcon = 28;
   static const double selectedBorder = 2;
+  static const double emptyStateIcon = 56;
 
   // Product card
   static const double heartButton = 36;
@@ -138,4 +142,62 @@ abstract final class AuthDimens {
   static const double codeDigitToLine = 10;
   static const double codeLine = 2;
   static const double codeToButton = 26;
+}
+
+/// Home, catalogue and items screens (measured on the @2x exports).
+abstract final class CatalogueDimens {
+  /// From the search field to the first block under it.
+  static const double contentTop = 17;
+
+  // Home banner
+  static const double bannerHeight = 87.5;
+  static const double bannerTextStart = 20;
+  static const double bannerTitleTop = 14;
+  static const double bannerTitleToLink = 5;
+  static const double bannerIndicatorInset = 8;
+  static const double bannerIndicatorBottom = 4;
+  static const double bannerIndicatorHeight = 2;
+  static const double bannerIndicatorGap = 4;
+  static const Duration bannerInterval = Duration(seconds: 4);
+
+  // Home sections
+  static const double sectionTop = 22;
+  static const double sectionToContent = 16;
+  static const double featuredTop = 30;
+  static const double featuredToGrid = 14;
+  static const double tileSize = 87.5;
+  static const double tileGap = 16;
+  static const double tileTextInset = 6;
+
+  // Catalogue list
+  static const double cardHeight = 87.5;
+  static const double cardGap = 16;
+  static const double cardTextStart = 16.5;
+
+  // Items: subcategory chips and count row
+  static const double chipHeight = 26;
+  static const double chipPadding = 14;
+  static const double chipGap = 8;
+  static const double countTop = 21.5;
+  static const double countToGrid = 14.5;
+  static const double filterDot = 8;
+}
+
+/// Profile screen (measured on the @3x export).
+abstract final class ProfileDimens {
+  static const double headerHeight = 102; // under the status bar
+  static const Radius headerCurve = Radius.elliptical(145.5, 145.7);
+  static const double avatar = 66;
+  static const double avatarRing = 2;
+  static const double avatarTop = 12; // under the status bar
+  static const double nameStart = 103;
+  static const double nameTop = 21; // under the status bar
+  static const double editButton = 48;
+  static const double editButtonTop = 30; // under the status bar
+  static const double menuTop = 24;
+  static const double menuItemHeight = 56;
+  static const double menuItemGap = 16;
+  static const double menuIconStart = 14;
+  static const double menuTextStart = 53;
+  static const double privacyBottom = 21; // above the bottom navigation
 }

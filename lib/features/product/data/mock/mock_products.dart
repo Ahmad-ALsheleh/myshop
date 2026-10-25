@@ -327,8 +327,7 @@ const larkRoSkirt = Product(
         'تنورة كلاسيكية متوسطة الطول بثنيات وخصر عالٍ وجيوب جانبية مخفية. '
         'مناسبة للعمل ولعطلة نهاية الأسبوع.',
   ),
-  price: 4590,
-  oldPrice: 6590,
+  price: 7233,
   images: ['$_images/lark_ro_skirt.jpg'],
   colors: [
     ProductColorOption(
@@ -357,7 +356,7 @@ const larkRoJeggings = Product(
         'بنطال جينز ضيق يُلبس بسهولة، يجمع بين مظهر الجينز وراحة الليغنز '
         'بفضل قماشه الناعم عالي المرونة.',
   ),
-  price: 3850,
+  price: 7898,
   images: ['$_images/lark_ro_jeggings.jpg'],
   colors: [
     ProductColorOption(

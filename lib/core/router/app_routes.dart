@@ -7,13 +7,24 @@ abstract final class AppRoutes {
   static const verification = '/verification';
   static const verificationPhoneParam = 'phone';
 
-  /// Main app. Temporary widget gallery until the home screen exists.
-  static const home = '/';
+  // Tabs of the bottom navigation.
+  static const home = '/home';
+  static const catalogue = '/catalogue';
+  static const favorites = '/favorites';
+  static const profile = '/profile';
+
+  /// Items of a category, inside the catalogue tab.
+  static const categoryItems = ':categoryId';
+  static const categoryIdParam = 'categoryId';
+
+  static const search = '/search';
 
   static String verificationOf(String phone) => Uri(
     path: verification,
     queryParameters: {verificationPhoneParam: phone},
   ).toString();
+
+  static String categoryItemsOf(String categoryId) => '$catalogue/$categoryId';
 
   static const _signIn = {phone, verification};
 
@@ -25,7 +36,11 @@ abstract final class AppRoutes {
   }) {
     if (!onboardingSeen) return location == onboarding ? null : onboarding;
     if (!canEnterApp) return _signIn.contains(location) ? null : phone;
-    if (location == onboarding || _signIn.contains(location)) return home;
+    if (location == '/' ||
+        location == onboarding ||
+        _signIn.contains(location)) {
+      return home;
+    }
     return null;
   }
 }

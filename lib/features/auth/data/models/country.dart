@@ -28,3 +28,19 @@ class Country {
   String fullNumber(String localNumber) =>
       '$dialCode${PhoneMask.digitsOf(localNumber)}';
 }
+
+extension CountryLookup on List<Country> {
+  /// "+380991234567" → "+380 (99) 123 45 67", with the mask of the country
+  /// of the number (longest dial code first). Unknown codes stay as they are.
+  String displayNumber(String fullNumber) {
+    final byLongestCode = [...this]
+      ..sort((a, b) => b.dialCode.length.compareTo(a.dialCode.length));
+    for (final country in byLongestCode) {
+      if (fullNumber.startsWith(country.dialCode)) {
+        final local = fullNumber.substring(country.dialCode.length);
+        return '${country.dialCode} ${country.mask.apply(local)}';
+      }
+    }
+    return fullNumber;
+  }
+}

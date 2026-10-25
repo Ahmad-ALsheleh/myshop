@@ -1,13 +1,19 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/presentation/providers/session_provider.dart';
 import '../../features/auth/presentation/screens/phone_screen.dart';
 import '../../features/auth/presentation/screens/verification_screen.dart';
-import '../../features/dev/presentation/screens/widget_gallery_screen.dart';
+import '../../features/catalogue/presentation/screens/catalogue_screen.dart';
+import '../../features/catalogue/presentation/screens/items_screen.dart';
+import '../../features/catalogue/presentation/screens/search_screen.dart';
+import '../../features/favorites/presentation/screens/favorites_screen.dart';
+import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_provider.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/shell/presentation/screens/shell_screen.dart';
 import 'app_routes.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
@@ -43,9 +49,32 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               state.uri.queryParameters[AppRoutes.verificationPhoneParam] ?? '',
         ),
       ),
+      // The 4 tabs; each one keeps its own stack (and scroll position).
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) =>
+            ShellScreen(navigationShell: navigationShell),
+        branches: [
+          _tab(AppRoutes.home, const HomeScreen()),
+          _tab(
+            AppRoutes.catalogue,
+            const CatalogueScreen(),
+            routes: [
+              GoRoute(
+                path: AppRoutes.categoryItems,
+                builder: (context, state) => ItemsScreen(
+                  categoryId: state.pathParameters[AppRoutes.categoryIdParam]!,
+                ),
+              ),
+            ],
+          ),
+          _tab(AppRoutes.favorites, const FavoritesScreen()),
+          _tab(AppRoutes.profile, const ProfileScreen()),
+        ],
+      ),
+      // Full screen pages, above the bottom navigation.
       GoRoute(
-        path: AppRoutes.home,
-        builder: (context, state) => const WidgetGalleryScreen(),
+        path: AppRoutes.search,
+        builder: (context, state) => const SearchScreen(),
       ),
     ],
   );
@@ -55,3 +84,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   });
   return router;
 });
+
+StatefulShellBranch _tab(
+  String path,
+  Widget screen, {
+  List<RouteBase> routes = const [],
+}) => StatefulShellBranch(
+  routes: [
+    GoRoute(path: path, builder: (context, state) => screen, routes: routes),
+  ],
+);
