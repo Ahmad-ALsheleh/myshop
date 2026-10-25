@@ -201,3 +201,47 @@ abstract final class ProfileDimens {
   static const double menuTextStart = 53;
   static const double privacyBottom = 21; // above the bottom navigation
 }
+
+/// Filter, product page, add to cart sheet, cart and checkout (@2x).
+abstract final class ShopDimens {
+  // Forms of the filter screen: label, 3pt, field; 29pt between sections.
+  static const double formTop = 22;
+  static const double labelToField = 3;
+  static const double sectionGap = 29;
+  static const double sliderThumb = 24;
+  static const double resultsTop = 32;
+
+  // Product page
+  static const double ratingTop = 14;
+  static const double productStar = 15.5;
+  static const double blockGap = 8; // grey gap between the white blocks
+  static const double blockPadding = 20;
+  static const double descriptionLines = 4;
+  static const double relatedCardWidth = 139;
+  static const double bottomBarTop = 16;
+  static const double galleryDot = 6;
+
+  // Add to cart sheet
+  static const double sheetHandleWidth = 60;
+  static const double sheetHandleHeight = 4;
+  static const double sheetImage = 80;
+  static const double sheetTop = 32;
+
+  // Cart
+  static const double cartImage = 80;
+  static const double cartRowPadding = 16;
+  static const double panelPadding = 18;
+
+  // Checkout
+  static const double sectionTitleToCard = 16;
+  static const double sectionGapCheckout = 32;
+  static const double deliveryCardHeight = 91.5;
+  static const double deliveryLogoHeight = 18;
+  static const double cardLogoWidth = 42;
+  static const double summaryRowGap = 8;
+
+  // Success popup
+  static const double popupCircle = 228;
+  static const double popupCircleVisible = 114;
+  static const double popupIcon = 64;
+}

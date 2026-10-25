@@ -107,7 +107,8 @@ class HomeScreen extends ConsumerWidget {
                 ),
                 SliverProductGrid(
                   products: ref.watch(featuredProductsProvider),
-                  onProductTap: null,
+                  onProductTap: (product) =>
+                      context.push(AppRoutes.productOf(product.id)),
                 ),
                 const SliverToBoxAdapter(child: BottomNavigationSpacer()),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../product/data/models/product.dart';
+import '../../../product/data/models/product_color.dart';
 import '../../../product/data/repositories/product_repository.dart';
 import '../../data/models/category.dart';
 import '../../data/repositories/category_repository.dart';
@@ -36,4 +37,18 @@ final categoryBrandsProvider = Provider.family<List<String>, String>((
   final products = ref.watch(allCategoryProductsProvider(categoryId));
   return {for (final product in products) product.brand}.toList()
     ..sort((a, b) => a.toLowerCase().compareTo(b.toLowerCase()));
+});
+
+/// Colors available in a category, in the order of [ProductColor]
+/// (filter screen "Colors").
+final categoryColorsProvider = Provider.family<List<ProductColor>, String>((
+  ref,
+  categoryId,
+) {
+  final products = ref.watch(allCategoryProductsProvider(categoryId));
+  final colors = {
+    for (final product in products)
+      for (final option in product.colors) option.color,
+  };
+  return ProductColor.values.where(colors.contains).toList();
 });

@@ -6,10 +6,11 @@ import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/theme/app_dimens.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/primary_button.dart';
+import '../../../../core/widgets/text_action_button.dart';
 import '../../data/repositories/auth_repository.dart';
 import '../providers/sign_in_providers.dart';
 import '../widgets/auth_header.dart';
-import '../widgets/auth_text_button.dart';
+
 import '../widgets/code_input.dart';
 
 /// "Verification Code": the 4 digits sent to [phone].
@@ -141,7 +142,10 @@ class _VerificationScreenState extends ConsumerState<VerificationScreen> {
                       onPressed: _verify,
                     ),
                     const SizedBox(height: AuthDimens.secondaryTop),
-                    AuthTextButton(label: l10n.resendCode, onPressed: _resend),
+                    TextActionButton(
+                      label: l10n.resendCode,
+                      onPressed: _resend,
+                    ),
                     const SizedBox(height: AppSpacing.l),
                   ],
                 ),

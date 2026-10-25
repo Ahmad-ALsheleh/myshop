@@ -5,13 +5,18 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/providers/session_provider.dart';
 import '../../features/auth/presentation/screens/phone_screen.dart';
 import '../../features/auth/presentation/screens/verification_screen.dart';
+import '../../features/cart/presentation/screens/cart_screen.dart';
 import '../../features/catalogue/presentation/screens/catalogue_screen.dart';
+import '../../features/catalogue/presentation/screens/filter_screen.dart';
 import '../../features/catalogue/presentation/screens/items_screen.dart';
 import '../../features/catalogue/presentation/screens/search_screen.dart';
+import '../../features/checkout/presentation/screens/checkout_screen.dart';
 import '../../features/favorites/presentation/screens/favorites_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_provider.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
+import '../../features/product/presentation/screens/product_screen.dart';
+import '../../features/profile/presentation/screens/orders_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/shell/presentation/screens/shell_screen.dart';
 import 'app_routes.dart';
@@ -75,6 +80,30 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.search,
         builder: (context, state) => const SearchScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.product,
+        builder: (context, state) => ProductScreen(
+          productId: state.pathParameters[AppRoutes.productIdParam]!,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.filter,
+        builder: (context, state) => FilterScreen(
+          categoryId: state.pathParameters[AppRoutes.categoryIdParam]!,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.cart,
+        builder: (context, state) => const CartScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.checkout,
+        builder: (context, state) => const CheckoutScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.orders,
+        builder: (context, state) => const OrdersScreen(),
       ),
     ],
   );

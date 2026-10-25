@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../core/router/app_routes.dart';
 import '../widgets/app_bottom_navigation.dart';
 
 /// Frame of the 4 main tabs: the current tab + the bottom navigation.
@@ -23,8 +24,7 @@ class ShellScreen extends StatelessWidget {
           index,
           initialLocation: index == navigationShell.currentIndex,
         ),
-        // The cart screen is added with the cart feature.
-        onCartTap: () {},
+        onCartTap: () => context.push(AppRoutes.cart),
       ),
     );
   }

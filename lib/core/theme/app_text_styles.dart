@@ -51,6 +51,20 @@ abstract final class AppTextStyles {
     height: 1.3,
   );
 
+  /// Product name on the product page.
+  static const productTitle = TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.w400,
+    height: 1.2,
+  );
+
+  /// Price on the product page.
+  static const priceHero = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    height: 1.2,
+  );
+
   /// Labels of the 48pt buttons.
   static const button = TextStyle(
     fontSize: 17,

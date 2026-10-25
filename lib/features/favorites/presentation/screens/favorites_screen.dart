@@ -56,7 +56,11 @@ class FavoritesScreen extends ConsumerWidget {
                           ),
                         ),
                       ),
-                      SliverProductGrid(products: products, onProductTap: null),
+                      SliverProductGrid(
+                        products: products,
+                        onProductTap: (product) =>
+                            context.push(AppRoutes.productOf(product.id)),
+                      ),
                       const SliverToBoxAdapter(child: BottomNavigationSpacer()),
                     ],
                   ),

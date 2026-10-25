@@ -30,6 +30,9 @@ class Address implements Defaultable<Address> {
   @override
   final bool isDefault;
 
+  /// Second line of the address card: "Springfield, IL 62704, USA".
+  String get cityLine => '$city, $region $zipCode, $country';
+
   @override
   Address copyWithDefault(bool isDefault) => Address(
     id: id,

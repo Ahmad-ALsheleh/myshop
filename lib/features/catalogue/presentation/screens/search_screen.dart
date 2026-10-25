@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_dimens.dart';
 import '../../../../core/widgets/app_search_field.dart';
 import '../../../../core/widgets/empty_state.dart';
@@ -40,7 +42,11 @@ class SearchScreen extends ConsumerWidget {
                       const SliverToBoxAdapter(
                         child: SizedBox(height: CatalogueDimens.contentTop),
                       ),
-                      SliverProductGrid(products: results, onProductTap: null),
+                      SliverProductGrid(
+                        products: results,
+                        onProductTap: (product) =>
+                            context.push(AppRoutes.productOf(product.id)),
+                      ),
                       const SliverToBoxAdapter(
                         child: SizedBox(height: AppSpacing.l),
                       ),

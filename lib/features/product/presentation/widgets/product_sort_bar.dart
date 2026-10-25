@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/theme/app_dimens.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/options_sheet.dart';
 import '../../data/models/product_sort.dart';
 
 extension ProductSortLabel on ProductSort {
@@ -31,11 +32,7 @@ class ProductSortBar extends StatelessWidget {
   final ValueChanged<ProductSort> onSortChanged;
 
   Future<void> _pickSort(BuildContext context) async {
-    final selected = await showModalBottomSheet<ProductSort>(
-      context: context,
-      showDragHandle: true,
-      builder: (context) => _SortSheet(selected: sort),
-    );
+    final selected = await showSortSheet(context, sort);
     if (selected != null) onSortChanged(selected);
   }
 
@@ -89,35 +86,14 @@ class ProductSortBar extends StatelessWidget {
   }
 }
 
-class _SortSheet extends StatelessWidget {
-  const _SortSheet({required this.selected});
-
-  final ProductSort selected;
-
-  @override
-  Widget build(BuildContext context) {
-    final palette = context.palette;
-    return SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          for (final sort in ProductSort.values)
-            ListTile(
-              onTap: () => Navigator.pop(context, sort),
-              title: Text(
-                sort.label(context),
-                style: AppTextStyles.body.copyWith(
-                  color: palette.textPrimary,
-                  fontWeight: sort == selected ? FontWeight.w700 : null,
-                ),
-              ),
-              trailing: sort == selected
-                  ? Icon(Icons.check, color: palette.accent)
-                  : null,
-            ),
-        ],
-      ),
-    );
-  }
-}
+/// Sort options sheet (sort bar and filter screen).
+Future<ProductSort?> showSortSheet(
+  BuildContext context,
+  ProductSort selected,
+) => showOptionsSheet(
+  context,
+  title: context.l10n.sortByLabel,
+  options: ProductSort.values,
+  selected: selected,
+  labelOf: (sort) => sort.label(context),
+);

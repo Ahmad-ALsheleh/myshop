@@ -70,7 +70,11 @@ class ProfileScreen extends ConsumerWidget {
       // The next screens are connected when they are built.
       (Icons.location_on_outlined, l10n.shippingAddresses, null),
       (Icons.credit_card_outlined, l10n.paymentMethods, null),
-      (Icons.assignment_outlined, l10n.orders, null),
+      (
+        Icons.assignment_outlined,
+        l10n.orders,
+        () => context.push(AppRoutes.orders),
+      ),
       (
         Icons.favorite_border,
         l10n.navFavorite,

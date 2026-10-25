@@ -287,4 +287,178 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get privacyPolicyBody =>
       'MyShop is a demo app: your data never leaves this device. The phone number and settings you enter are only stored locally to keep you signed in.';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get priceLabel => 'Price';
+
+  @override
+  String get categoriesLabel => 'Categories';
+
+  @override
+  String get brandLabel => 'Brand';
+
+  @override
+  String get sortByLabel => 'Sort by';
+
+  @override
+  String results(int count) {
+    return 'Results ($count)';
+  }
+
+  @override
+  String get priceRangeInvalid =>
+      'The minimum price must not be higher than the maximum';
+
+  @override
+  String reviewsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count reviews',
+      one: '1 review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get inStock => 'In Stock';
+
+  @override
+  String get outOfStock => 'Out of Stock';
+
+  @override
+  String get productDetails => 'Product details';
+
+  @override
+  String get reviews => 'Reviews';
+
+  @override
+  String helpfulCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count people found this helpful',
+      one: '1 person found this helpful',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get comment => 'Comment';
+
+  @override
+  String get helpful => 'Helpful';
+
+  @override
+  String get relatedProducts => 'Products related to this item';
+
+  @override
+  String get addToCart => 'Add to Cart';
+
+  @override
+  String get addedToCart => 'Added to cart';
+
+  @override
+  String get viewCart => 'View cart';
+
+  @override
+  String get writeComment => 'Write your comment';
+
+  @override
+  String get send => 'Send';
+
+  @override
+  String get commentThanks => 'Thanks for your comment!';
+
+  @override
+  String get showMore => 'Show more';
+
+  @override
+  String get showLess => 'Show less';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get clearCartConfirm => 'Remove all items from the cart?';
+
+  @override
+  String get totalPrice => 'Total price';
+
+  @override
+  String get checkOut => 'Check Out';
+
+  @override
+  String get emptyCart => 'Your cart is empty';
+
+  @override
+  String get shippingAddress => 'Shipping Address';
+
+  @override
+  String get deliveryMethod => 'Delivery Method';
+
+  @override
+  String get paymentMethod => 'Payment Method';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get itemsLabel => 'Items';
+
+  @override
+  String get deliveryLabel => 'Delivery';
+
+  @override
+  String get pay => 'Pay';
+
+  @override
+  String deliveryDays(int min, int max) {
+    return '$min-$max days';
+  }
+
+  @override
+  String get success => 'Success';
+
+  @override
+  String get orderSuccessMessage =>
+      'Your order will be delivered soon.\nIt can be tracked in the \"Orders\" section.';
+
+  @override
+  String get continueShopping => 'Continue Shopping';
+
+  @override
+  String get goToOrders => 'Go to Orders';
+
+  @override
+  String get noAddress => 'Add a shipping address in your profile';
+
+  @override
+  String get noCard => 'Add a payment card in your profile';
+
+  @override
+  String orderNumber(String number) {
+    return 'Order #$number';
+  }
+
+  @override
+  String get orderProcessing => 'Processing';
+
+  @override
+  String get orderShipped => 'Shipped';
+
+  @override
+  String get orderDelivered => 'Delivered';
+
+  @override
+  String get noOrders => 'No orders yet';
+
+  @override
+  String get done => 'Done';
 }

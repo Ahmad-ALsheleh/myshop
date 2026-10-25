@@ -18,6 +18,12 @@ abstract final class AppRoutes {
   static const categoryIdParam = 'categoryId';
 
   static const search = '/search';
+  static const product = '/product/:productId';
+  static const productIdParam = 'productId';
+  static const filter = '/filter/:categoryId';
+  static const cart = '/cart';
+  static const checkout = '/checkout';
+  static const orders = '/orders';
 
   static String verificationOf(String phone) => Uri(
     path: verification,
@@ -25,6 +31,10 @@ abstract final class AppRoutes {
   ).toString();
 
   static String categoryItemsOf(String categoryId) => '$catalogue/$categoryId';
+
+  static String productOf(String productId) => '/product/$productId';
+
+  static String filterOf(String categoryId) => '/filter/$categoryId';
 
   static const _signIn = {phone, verification};
 

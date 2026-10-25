@@ -290,4 +290,184 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get privacyPolicyBody =>
       'MyShop تطبيق تجريبي: بياناتك لا تغادر هذا الجهاز. رقم الهاتف والإعدادات التي تدخلها تُحفظ محليًا فقط لإبقائك مسجلًا للدخول.';
+
+  @override
+  String get clear => 'مسح';
+
+  @override
+  String get priceLabel => 'السعر';
+
+  @override
+  String get categoriesLabel => 'الأقسام';
+
+  @override
+  String get brandLabel => 'الماركة';
+
+  @override
+  String get sortByLabel => 'ترتيب حسب';
+
+  @override
+  String results(int count) {
+    return 'النتائج ($count)';
+  }
+
+  @override
+  String get priceRangeInvalid => 'يجب ألا يكون أقل سعر أعلى من أعلى سعر';
+
+  @override
+  String reviewsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count تقييم',
+      many: '$count تقييمًا',
+      few: '$count تقييمات',
+      two: 'تقييمان',
+      one: 'تقييم واحد',
+      zero: 'لا تقييمات',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get inStock => 'متوفر';
+
+  @override
+  String get outOfStock => 'غير متوفر';
+
+  @override
+  String get productDetails => 'تفاصيل المنتج';
+
+  @override
+  String get reviews => 'التقييمات';
+
+  @override
+  String helpfulCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count شخص وجدوا هذا مفيدًا',
+      many: '$count شخصًا وجدوا هذا مفيدًا',
+      few: '$count أشخاص وجدوا هذا مفيدًا',
+      two: 'شخصان وجدا هذا مفيدًا',
+      one: 'شخص واحد وجد هذا مفيدًا',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get comment => 'تعليق';
+
+  @override
+  String get helpful => 'مفيد';
+
+  @override
+  String get relatedProducts => 'منتجات ذات صلة بهذا المنتج';
+
+  @override
+  String get addToCart => 'أضف إلى السلة';
+
+  @override
+  String get addedToCart => 'تمت الإضافة إلى السلة';
+
+  @override
+  String get viewCart => 'عرض السلة';
+
+  @override
+  String get writeComment => 'اكتب تعليقك';
+
+  @override
+  String get send => 'إرسال';
+
+  @override
+  String get commentThanks => 'شكرًا على تعليقك!';
+
+  @override
+  String get showMore => 'عرض المزيد';
+
+  @override
+  String get showLess => 'عرض أقل';
+
+  @override
+  String get cart => 'السلة';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get clearCartConfirm => 'هل تريد إزالة كل المنتجات من السلة؟';
+
+  @override
+  String get totalPrice => 'السعر الإجمالي';
+
+  @override
+  String get checkOut => 'إتمام الشراء';
+
+  @override
+  String get emptyCart => 'سلتك فارغة';
+
+  @override
+  String get shippingAddress => 'عنوان الشحن';
+
+  @override
+  String get deliveryMethod => 'طريقة التوصيل';
+
+  @override
+  String get paymentMethod => 'طريقة الدفع';
+
+  @override
+  String get change => 'تغيير';
+
+  @override
+  String get itemsLabel => 'المنتجات';
+
+  @override
+  String get deliveryLabel => 'التوصيل';
+
+  @override
+  String get pay => 'ادفع';
+
+  @override
+  String deliveryDays(int min, int max) {
+    return '$min-$max أيام';
+  }
+
+  @override
+  String get success => 'تم بنجاح';
+
+  @override
+  String get orderSuccessMessage =>
+      'سيتم توصيل طلبك قريبًا.\nيمكنك متابعته من قسم \"الطلبات\".';
+
+  @override
+  String get continueShopping => 'متابعة التسوق';
+
+  @override
+  String get goToOrders => 'الذهاب إلى الطلبات';
+
+  @override
+  String get noAddress => 'أضف عنوان شحن من ملفك الشخصي';
+
+  @override
+  String get noCard => 'أضف بطاقة دفع من ملفك الشخصي';
+
+  @override
+  String orderNumber(String number) {
+    return 'الطلب رقم $number';
+  }
+
+  @override
+  String get orderProcessing => 'قيد التجهيز';
+
+  @override
+  String get orderShipped => 'تم الشحن';
+
+  @override
+  String get orderDelivered => 'تم التوصيل';
+
+  @override
+  String get noOrders => 'لا توجد طلبات بعد';
+
+  @override
+  String get done => 'تم';
 }

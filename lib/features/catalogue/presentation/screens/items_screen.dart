@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_dimens.dart';
 import '../../../../core/widgets/app_icon_button.dart';
 import '../../../../core/widgets/app_search_field.dart';
@@ -34,8 +36,7 @@ class ItemsScreen extends ConsumerWidget {
             title: category == null ? null : context.localize(category.name),
             trailing: _FilterButton(
               isActive: filter.hasActiveFilters,
-              // The filter screen comes in the next step.
-              onPressed: null,
+              onPressed: () => context.push(AppRoutes.filterOf(categoryId)),
             ),
             bottom: AppSearchField(
               initialValue: filter.query,
@@ -80,7 +81,11 @@ class ItemsScreen extends ConsumerWidget {
                     ),
                   )
                 else
-                  SliverProductGrid(products: products, onProductTap: null),
+                  SliverProductGrid(
+                    products: products,
+                    onProductTap: (product) =>
+                        context.push(AppRoutes.productOf(product.id)),
+                  ),
                 const SliverToBoxAdapter(child: BottomNavigationSpacer()),
               ],
             ),

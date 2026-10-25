@@ -10,11 +10,12 @@ import '../../../../core/theme/app_dimens.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_text_field.dart';
 import '../../../../core/widgets/primary_button.dart';
+import '../../../../core/widgets/text_action_button.dart';
 import '../../data/models/country.dart';
 import '../providers/session_provider.dart';
 import '../providers/sign_in_providers.dart';
 import '../widgets/auth_header.dart';
-import '../widgets/auth_text_button.dart';
+
 import '../widgets/country_picker_sheet.dart';
 import '../widgets/phone_prefix.dart';
 
@@ -133,7 +134,7 @@ class _PhoneScreenState extends ConsumerState<PhoneScreen> {
                       onPressed: () => _sendCode(country),
                     ),
                     const SizedBox(height: AuthDimens.secondaryTop),
-                    AuthTextButton(
+                    TextActionButton(
                       label: l10n.skip,
                       onPressed: () =>
                           ref.read(guestModeProvider.notifier).set(true),
