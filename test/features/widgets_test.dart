@@ -18,7 +18,7 @@ void main() {
       await tester.pumpApp(
         const SizedBox(
           width: 163,
-          child: ProductCard(product: saodimallsuTurtleneck),
+          child: ProductCard(product: saodimallsuSweater),
         ),
       );
 
@@ -29,7 +29,7 @@ void main() {
 
     testWidgets('a regular product has no badge', (tester) async {
       await tester.pumpApp(
-        const SizedBox(width: 163, child: ProductCard(product: jouicaSweater)),
+        const SizedBox(width: 163, child: ProductCard(product: jouicaCardigan)),
       );
 
       expect(find.textContaining('%'), findsNothing);
@@ -38,9 +38,9 @@ void main() {
 
     testWidgets('the heart toggles the favorite', (tester) async {
       final container = await tester.pumpApp(
-        const SizedBox(width: 163, child: ProductCard(product: jouicaSweater)),
+        const SizedBox(width: 163, child: ProductCard(product: jouicaCardigan)),
       );
-      bool isFavorite() => container.read(isFavoriteProvider(jouicaSweater.id));
+      bool isFavorite() => container.read(isFavoriteProvider(jouicaCardigan.id));
 
       expect(isFavorite(), isFalse);
       await tester.tap(find.byIcon(Icons.favorite_border));
@@ -55,7 +55,7 @@ void main() {
           alignment: AlignmentDirectional.topStart,
           child: SizedBox(
             width: 163,
-            child: ProductCard(product: saodimallsuTurtleneck),
+            child: ProductCard(product: saodimallsuSweater),
           ),
         ),
       );

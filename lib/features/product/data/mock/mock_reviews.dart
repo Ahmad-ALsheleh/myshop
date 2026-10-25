@@ -73,10 +73,10 @@ final mockProductReviews = <String, List<Review>>{
       text: const LocalizedText(
         en:
             'Great quality for the price. The sleeves are long, which I love, '
-            'and the pockets are a nice touch.',
+            'and the wooden buttons are a nice touch.',
         ar:
-            'جودة رائعة مقابل السعر. الأكمام طويلة وهذا ما أحبه، والجيوب لمسة '
-            'جميلة.',
+            'جودة رائعة مقابل السعر. الأكمام طويلة وهذا ما أحبه، والأزرار الخشبية '
+            'لمسة جميلة.',
       ),
       helpfulCount: 64,
     ),

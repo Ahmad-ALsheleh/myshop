@@ -10,32 +10,32 @@ const _images = 'assets/images/products';
 // Women's Fashion (the products that appear in the design)
 // ---------------------------------------------------------------------------
 
-const saodimallsuTurtleneck = Product(
+const saodimallsuSweater = Product(
   id: 'p1',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenSweaters,
   brand: 'Saodimallsu',
   name: LocalizedText(
-    en: 'Saodimallsu Womens Turtleneck Oversized Chunky Knit Pullover Sweater',
-    ar: 'كنزة Saodimallsu نسائية واسعة بياقة عالية ونسيج محبوك سميك',
+    en: 'Saodimallsu Womens Oversized Chunky Knit Long Sleeve Pullover Sweater',
+    ar: 'كنزة Saodimallsu نسائية واسعة بأكمام طويلة ونسيج محبوك سميك',
   ),
   description: LocalizedText(
     en:
-        'A cozy oversized turtleneck in a chunky waffle knit. Dropped '
-        'shoulders and ribbed cuffs make it an easy layer over jeans or '
-        'leggings all winter long.',
+        'A cozy oversized pullover in a chunky rib knit with long ribbed '
+        'cuffs. Its relaxed fit layers easily over a long skirt or wide-leg '
+        'trousers all winter long.',
     ar:
-        'كنزة واسعة ودافئة بياقة عالية ونسيج محبوك سميك. أكتافها المنسدلة '
-        'وأساورها المضلّعة تجعلها قطعة سهلة التنسيق مع الجينز أو الليغنز طوال '
+        'كنزة واسعة ودافئة بنسيج محبوك سميك وأساور طويلة مضلّعة. قَصّتها '
+        'المريحة تجعلها سهلة التنسيق مع تنورة طويلة أو بنطال واسع طوال '
         'الشتاء.',
   ),
   price: 4900,
   oldPrice: 9900,
-  images: ['$_images/saodimallsu_turtleneck.jpg'],
+  images: ['$_images/saodimallsu_sweater.jpg'],
   colors: [
     ProductColorOption(
       color: ProductColor.beige,
-      image: '$_images/saodimallsu_turtleneck.jpg',
+      image: '$_images/saodimallsu_sweater.jpg',
     ),
   ],
   sizes: [ProductSize.s, ProductSize.m, ProductSize.l, ProductSize.xl],
@@ -49,25 +49,24 @@ const astylishCardigan = Product(
   subcategoryId: SubcategoryIds.womenSweaters,
   brand: 'Astylish',
   name: LocalizedText(
-    en: 'Astylish Women Open Front Long Sleeve Chunky Knit Cardigan',
-    ar: 'كارديغان Astylish نسائي محبوك سميك بأكمام طويلة ومفتوح من الأمام',
+    en: 'Astylish Women V-Neck Button Down Long Sleeve Chunky Knit Cardigan',
+    ar: 'كارديغان Astylish نسائي محبوك سميك بياقة V وأزرار وأكمام طويلة',
   ),
   description: LocalizedText(
     en:
-        "Women's Casual V-Neck Pullover Sweater Long Sleeved Sweater Top with "
-        'High Low Hemline is going to be the newest staple in your wardrobe! '
-        'Living up to its namesake, this sweater is unbelievably soft, '
-        'lightweight and stretchy. Pair it with jeans, leggings or a skirt '
-        'for an effortless everyday look.',
+        "Women's Casual V-Neck Button Down Cardigan with long sleeves and "
+        'ribbed cuffs is going to be the newest staple in your wardrobe! '
+        'Living up to its namesake, this cardigan is unbelievably soft, warm '
+        'and cozy. Layer it over a long dress or pair it with wide-leg '
+        'trousers for an effortless everyday look.',
     ar:
-        'هذه الكنزة النسائية الكاجوال بأكمامها الطويلة وحافتها غير المتساوية '
-        'ستصبح القطعة الأساسية الجديدة في خزانتك! وكما يوحي اسمها، فهي ناعمة '
-        'وخفيفة ومرنة بشكل لا يصدق. نسّقيها مع الجينز أو الليغنز أو التنورة '
-        'لإطلالة يومية سهلة.',
+        'هذا الكارديغان النسائي الكاجوال بياقته V وأزراره وأكمامه الطويلة '
+        'ذات الأساور المضلّعة سيصبح القطعة الأساسية الجديدة في خزانتك! وكما '
+        'يوحي اسمه، فهو ناعم ودافئ ومريح بشكل لا يصدق. ارتديه فوق فستان طويل '
+        'أو نسّقيه مع بنطال واسع لإطلالة يومية سهلة.',
   ),
   price: 8999,
-  // The other colors only exist as small thumbnails in the design, too
-  // blurry for the full-width gallery.
+  // The other colors are the same photo, recolored.
   images: ['$_images/astylish_cardigan_brown.jpg'],
   colors: [
     ProductColorOption(
@@ -100,31 +99,30 @@ const astylishCardigan = Product(
   isFeatured: true,
 );
 
-const ecowishKimono = Product(
+const ecowishCardigan = Product(
   id: 'p3',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenSweaters,
   brand: 'ECOWISH',
   name: LocalizedText(
-    en: 'ECOWISH Womens Color Block Striped Draped Kimono Cardigan',
-    ar: 'كارديغان كيمونو ECOWISH نسائي مخطط بألوان متباينة',
+    en: 'ECOWISH Womens Embroidered Leaf Long Knit V-Neck Cardigan',
+    ar: 'كارديغان ECOWISH نسائي طويل محبوك بياقة V وتطريز أوراق',
   ),
   description: LocalizedText(
     en:
-        'A relaxed open-front cardigan with bold color-block stripes and a '
-        'soft draped fit. Light enough for spring evenings, warm enough for '
-        'autumn days.',
+        'A soft beige cardigan with embroidered leaves and little bobble '
+        'flowers. Its long, relaxed fit layers beautifully over dresses and '
+        'tunics.',
     ar:
-        'كارديغان مريح مفتوح من الأمام بخطوط عريضة متباينة الألوان وقَصّة '
-        'منسدلة ناعمة. خفيف بما يكفي لأمسيات الربيع ودافئ بما يكفي لأيام '
-        'الخريف.',
+        'كارديغان بيج ناعم بتطريز أوراق وزهور صغيرة بارزة. قَصّته الطويلة '
+        'المريحة تجعله مثاليًا فوق الفساتين والتونيكات.',
   ),
   price: 10233,
-  images: ['$_images/ecowish_kimono.jpg'],
+  images: ['$_images/ecowish_cardigan.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.orange,
-      image: '$_images/ecowish_kimono.jpg',
+      color: ProductColor.beige,
+      image: '$_images/ecowish_cardigan.jpg',
     ),
   ],
   sizes: [ProductSize.xs, ProductSize.s, ProductSize.m, ProductSize.l],
@@ -139,23 +137,23 @@ const angashionSweater = Product(
   brand: 'Angashion',
   name: LocalizedText(
     en:
-        "Angashion Women's Sweaters Casual Long Sleeve Crewneck Color Block "
-        'Patchwork Pullover',
-    ar: 'كنزة Angashion نسائية كاجوال بياقة دائرية وألوان متداخلة',
+        "Angashion Women's Sweaters Casual Long Sleeve Crewneck Striped "
+        'Chunky Knit Pullover',
+    ar: 'كنزة Angashion نسائية مخططة بياقة دائرية ونسيج محبوك سميك',
   ),
   description: LocalizedText(
     en:
-        'A crewneck pullover in three earthy color blocks with a fine knit '
-        'texture. The loose fit and long sleeves keep it comfortable all day.',
+        'A chunky crewneck pullover with wide navy and gray stripes. The '
+        'loose fit and long sleeves keep it warm and comfortable all day.',
     ar:
-        'كنزة بياقة دائرية بثلاثة ألوان ترابية متداخلة ونسيج محبوك ناعم. '
-        'قَصّتها الواسعة وأكمامها الطويلة تمنحك الراحة طوال اليوم.',
+        'كنزة بياقة دائرية ونسيج محبوك سميك بخطوط عريضة كحلية ورمادية. '
+        'قَصّتها الواسعة وأكمامها الطويلة تمنحك الدفء والراحة طوال اليوم.',
   ),
   price: 13298,
   images: ['$_images/angashion_sweater.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.brown,
+      color: ProductColor.blue,
       image: '$_images/angashion_sweater.jpg',
     ),
   ],
@@ -164,29 +162,30 @@ const angashionSweater = Product(
   isFeatured: true,
 );
 
-const jouicaSweater = Product(
+const jouicaCardigan = Product(
   id: 'p5',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenSweaters,
   brand: 'Jouica',
   name: LocalizedText(
-    en: "Jouica Women's Casual Lightweight V Neck Basic Pullover Sweater",
-    ar: 'كنزة Jouica نسائية خفيفة بياقة على شكل V',
+    en: "Jouica Women's Lightweight V-Neck Button Front Knit Cardigan",
+    ar: 'كارديغان Jouica نسائي خفيف بياقة V وأزرار أمامية',
   ),
   description: LocalizedText(
     en:
-        'A lightweight V-neck basic with a center seam and a soft, slightly '
-        'stretchy knit. Tuck it into jeans or wear it loose over leggings.',
+        'A lightweight basic cardigan in a soft, fine knit with a V-neck and '
+        'a button front. Easy to layer over a blouse or a long dress in every '
+        'season.',
     ar:
-        'كنزة أساسية خفيفة بياقة V وخياطة في المنتصف ونسيج ناعم مرن قليلًا. '
-        'ارتديها داخل الجينز أو بشكل فضفاض فوق الليغنز.',
+        'كارديغان أساسي خفيف بنسيج محبوك ناعم وياقة V وأزرار أمامية. سهل '
+        'الارتداء فوق بلوزة أو فستان طويل في كل المواسم.',
   ),
   price: 7854,
-  images: ['$_images/jouica_sweater.jpg'],
+  images: ['$_images/jouica_cardigan.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.brown,
-      image: '$_images/jouica_sweater.jpg',
+      color: ProductColor.gray,
+      image: '$_images/jouica_cardigan.jpg',
     ),
   ],
   sizes: ProductSize.values,
@@ -199,22 +198,22 @@ const biuclyHoodie = Product(
   subcategoryId: SubcategoryIds.womenTops,
   brand: 'Biucly',
   name: LocalizedText(
-    en: "Biucly Women's Lightweight Color Block Hoodie Sweatshirt",
-    ar: 'هودي Biucly نسائي خفيف بألوان متداخلة',
+    en: "Biucly Women's Loose Fit Long Sleeve Pullover Hoodie",
+    ar: 'هودي Biucly نسائي واسع بأكمام طويلة',
   ),
   description: LocalizedText(
     en:
-        'A breezy knit hoodie with coral and gray stripes and an open-stitch '
-        'pattern. A drawstring hood finishes the laid-back look.',
+        'A soft sage hoodie with a roomy fit, a lined hood and dropped '
+        'shoulders, made from a warm brushed fleece for everyday comfort.',
     ar:
-        'هودي محبوك خفيف بخطوط مرجانية ورمادية ونقشة مخرّمة، مع قلنسوة '
-        'برباط تكمل الإطلالة العفوية.',
+        'هودي ناعم بلون أخضر هادئ وقَصّة واسعة وقلنسوة مبطنة وأكتاف منسدلة، '
+        'من قماش صوفي دافئ لراحة يومية.',
   ),
   price: 8119,
   images: ['$_images/biucly_hoodie.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.gray,
+      color: ProductColor.green,
       image: '$_images/biucly_hoodie.jpg',
     ),
   ],
@@ -222,56 +221,58 @@ const biuclyHoodie = Product(
   rating: 4.5,
 );
 
-const voianlimoJumper = Product(
+const voianlimoSweater = Product(
   id: 'p7',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenSweaters,
   brand: 'VOIANLIMO',
   name: LocalizedText(
-    en: "VOIANLIMO Women's Off Shoulder Knit Jumper Sweater",
-    ar: 'كنزة VOIANLIMO نسائية محبوكة بأكتاف مكشوفة',
+    en: "VOIANLIMO Women's Color Block Crewneck Knit Sweater",
+    ar: 'كنزة VOIANLIMO نسائية محبوكة بياقة دائرية وألوان متباينة',
   ),
   description: LocalizedText(
     en:
-        'An off-the-shoulder jumper with batwing sleeves and a waffle knit. '
-        'Pair it with skinny jeans and ankle boots.',
+        'A bright red knit sweater with a contrasting purple neckline and a '
+        'soft brushed texture. A cheerful layer for cold days.',
     ar:
-        'كنزة بأكتاف مكشوفة وأكمام واسعة ونسيج محبوك بنقشة الوافل. نسّقيها مع '
-        'جينز ضيق وحذاء بوت قصير.',
+        'كنزة محبوكة باللون الأحمر الزاهي مع ياقة بنفسجية متباينة وملمس '
+        'ناعم. قطعة مبهجة للأيام الباردة.',
   ),
   price: 12499,
-  images: ['$_images/voianlimo_jumper.jpg'],
+  images: ['$_images/voianlimo_sweater.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.green,
-      image: '$_images/voianlimo_jumper.jpg',
+      color: ProductColor.red,
+      image: '$_images/voianlimo_sweater.jpg',
     ),
   ],
   sizes: [ProductSize.xs, ProductSize.s, ProductSize.m, ProductSize.l],
   rating: 4,
 );
 
-const simpleeCardigan = Product(
+const simpleeSweater = Product(
   id: 'p8',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenSweaters,
   brand: 'Simplee',
   name: LocalizedText(
-    en: "Simplee Women's Oversized Lantern Sleeve Knit Cardigan",
-    ar: 'كارديغان Simplee نسائي واسع بأكمام منفوخة',
+    en: "Simplee Women's V-Neck Long Sleeve Ribbed Knit Sweater",
+    ar: 'كنزة Simplee نسائية محبوكة بياقة V وأكمام طويلة',
   ),
   description: LocalizedText(
     en:
-        'A statement cardigan with puffed lantern sleeves and pom-pom details '
-        'in a soft rose knit.',
-    ar: 'كارديغان لافت بأكمام منفوخة وتفاصيل كرات صوفية بنسيج وردي ناعم.',
+        'A soft rose sweater in a fine ribbed knit with a V-neck and long '
+        'sleeves. Wear it over a shirt or a long-sleeve top.',
+    ar:
+        'كنزة وردية ناعمة بنسيج محبوك مضلّع وياقة V وأكمام طويلة. ارتديها فوق '
+        'قميص أو بلوزة بأكمام طويلة.',
   ),
   price: 10899,
-  images: ['$_images/simplee_cardigan.jpg'],
+  images: ['$_images/simplee_sweater.jpg'],
   colors: [
     ProductColorOption(
       color: ProductColor.pink,
-      image: '$_images/simplee_cardigan.jpg',
+      image: '$_images/simplee_sweater.jpg',
     ),
   ],
   sizes: [ProductSize.s, ProductSize.m, ProductSize.l],
@@ -285,17 +286,18 @@ const boriflorsDress = Product(
   brand: 'BORIFLORS',
   name: LocalizedText(
     en:
-        "BORIFLORS Women's Sexy Wrap Front Long Sleeve Ruched Bodycon Mini "
-        'Club Dress',
-    ar: 'فستان BORIFLORS نسائي قصير ضيق بأكمام طويلة وتصميم ملفوف من الأمام',
+        "BORIFLORS Women's Long Batwing Sleeve Belted Waist Loose Maxi "
+        'Dress',
+    ar: 'فستان BORIFLORS نسائي طويل وواسع بأكمام خفاشية وحزام عند الخصر',
   ),
   description: LocalizedText(
     en:
-        'A fitted mini dress with a wrap front, ruched sides and long sleeves. '
-        'The stretchy fabric hugs the figure for an elegant evening look.',
+        'A flowing maxi dress with wide batwing sleeves and a belted waist. '
+        'The loose, lightweight fabric drapes gracefully for an elegant '
+        'evening look.',
     ar:
-        'فستان قصير ضيق بتصميم ملفوف من الأمام وكشكشة على الجانبين وأكمام '
-        'طويلة. قماشه المرن يبرز القوام لإطلالة مسائية أنيقة.',
+        'فستان طويل منسدل بأكمام خفاشية واسعة وحزام عند الخصر. قماشه الخفيف '
+        'الواسع ينسدل بأناقة لإطلالة مسائية راقية.',
   ),
   price: 14999,
   images: ['$_images/boriflors_dress.jpg'],
@@ -316,22 +318,23 @@ const larkRoSkirt = Product(
   subcategoryId: SubcategoryIds.womenSkirts,
   brand: 'Lark & Ro',
   name: LocalizedText(
-    en: "Lark & Ro Women's High Waist Pleated A-Line Midi Skirt",
-    ar: 'تنورة Lark & Ro نسائية متوسطة الطول بخصر عالٍ وثنيات',
+    en: "Lark & Ro Women's High Waist Corduroy A-Line Maxi Skirt",
+    ar: 'تنورة Lark & Ro نسائية طويلة من المخمل المضلّع بخصر عالٍ',
   ),
   description: LocalizedText(
     en:
-        'A classic pleated midi skirt with a high waist and hidden side '
-        'pockets. Works for the office and the weekend alike.',
+        'A long A-line skirt in soft corduroy with a high waist, a button '
+        'front and hidden side pockets. Works for the office and the weekend '
+        'alike.',
     ar:
-        'تنورة كلاسيكية متوسطة الطول بثنيات وخصر عالٍ وجيوب جانبية مخفية. '
-        'مناسبة للعمل ولعطلة نهاية الأسبوع.',
+        'تنورة طويلة بقَصّة A من المخمل المضلّع الناعم بخصر عالٍ وأزرار '
+        'أمامية وجيوب جانبية مخفية. مناسبة للعمل ولعطلة نهاية الأسبوع.',
   ),
   price: 7233,
   images: ['$_images/lark_ro_skirt.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.black,
+      color: ProductColor.brown,
       image: '$_images/lark_ro_skirt.jpg',
     ),
   ],
@@ -339,58 +342,57 @@ const larkRoSkirt = Product(
   rating: 4.5,
 );
 
-const larkRoJeggings = Product(
+const larkRoJeans = Product(
   id: 'p11',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenJeans,
   brand: 'Lark & Ro',
   name: LocalizedText(
-    en: "Lark & Ro Women's Pull-On Stretch Skinny Jeggings",
-    ar: 'جينز Lark & Ro نسائي ضيق ومرن بدون أزرار',
+    en: "Lark & Ro Women's High Rise Relaxed Wide Leg Jeans",
+    ar: 'جينز Lark & Ro نسائي واسع بخصر عالٍ',
   ),
   description: LocalizedText(
     en:
-        'Pull-on skinny jeggings with the look of denim and the comfort of '
-        'leggings, thanks to a soft high-stretch fabric.',
-    ar:
-        'بنطال جينز ضيق يُلبس بسهولة، يجمع بين مظهر الجينز وراحة الليغنز '
-        'بفضل قماشه الناعم عالي المرونة.',
+        'Relaxed wide-leg jeans in a soft, comfortable denim with a high rise '
+        'and a full-length leg.',
+    ar: 'بنطال جينز واسع ومريح من قماش دنيم ناعم بخصر عالٍ وطول كامل.',
   ),
   price: 7898,
-  images: ['$_images/lark_ro_jeggings.jpg'],
+  images: ['$_images/lark_ro_jeans.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.black,
-      image: '$_images/lark_ro_jeggings.jpg',
+      color: ProductColor.blue,
+      image: '$_images/lark_ro_jeans.jpg',
     ),
   ],
   sizes: ProductSize.values,
   rating: 4,
 );
 
-const larkRoSwingDress = Product(
+const larkRoMaxiDress = Product(
   id: 'p12',
   categoryId: CategoryIds.womensFashion,
   subcategoryId: SubcategoryIds.womenDresses,
   brand: 'Lark & Ro',
   name: LocalizedText(
-    en: "Lark & Ro Women's Long Sleeve Empire Waist Swing Dress with Pockets",
-    ar: 'فستان Lark & Ro نسائي واسع بأكمام طويلة وخصر مرتفع وجيوب',
+    en: "Lark & Ro Women's Long Sleeve Tiered Maxi Dress",
+    ar: 'فستان Lark & Ro نسائي طويل بطبقات وأكمام طويلة',
   ),
   description: LocalizedText(
     en:
-        'An easy swing dress with an empire waist, long sleeves and side '
-        'pockets in a soft jersey fabric.',
+        'A long tiered dress with full-length sleeves and a wrap-style top in '
+        'a soft, flowing fabric. Comfortable for every day, elegant for '
+        'family occasions.',
     ar:
-        'فستان واسع مريح بخصر مرتفع وأكمام طويلة وجيوب جانبية، من قماش جيرسي '
-        'ناعم.',
+        'فستان طويل بطبقات وأكمام طويلة وصدر بتصميم ملفوف، من قماش ناعم '
+        'منسدل. مريح للاستخدام اليومي وأنيق للمناسبات العائلية.',
   ),
   price: 8254,
-  images: ['$_images/lark_ro_swing_dress.jpg'],
+  images: ['$_images/lark_ro_maxi_dress.jpg'],
   colors: [
     ProductColorOption(
-      color: ProductColor.black,
-      image: '$_images/lark_ro_swing_dress.jpg',
+      color: ProductColor.brown,
+      image: '$_images/lark_ro_maxi_dress.jpg',
     ),
   ],
   sizes: [ProductSize.s, ProductSize.m, ProductSize.l, ProductSize.xl],
@@ -812,18 +814,18 @@ const strideRunningShoes = Product(
 
 /// In "Featured" order (the default sort).
 const mockProducts = <Product>[
-  saodimallsuTurtleneck,
+  saodimallsuSweater,
   astylishCardigan,
-  ecowishKimono,
+  ecowishCardigan,
   angashionSweater,
-  jouicaSweater,
+  jouicaCardigan,
   biuclyHoodie,
-  voianlimoJumper,
-  simpleeCardigan,
+  voianlimoSweater,
+  simpleeSweater,
   boriflorsDress,
   larkRoSkirt,
-  larkRoJeggings,
-  larkRoSwingDress,
+  larkRoJeans,
+  larkRoMaxiDress,
   northfieldOxfordShirt,
   northfieldCableSweater,
   urbanThreadDenimJacket,

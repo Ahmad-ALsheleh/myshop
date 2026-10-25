@@ -25,44 +25,45 @@ void main() {
   test('filters by subcategory', () {
     const filter = ProductFilter(subcategoryId: SubcategoryIds.womenDresses);
 
-    expect(ids(filter.apply(women)), [boriflorsDress.id, larkRoSwingDress.id]);
+    expect(ids(filter.apply(women)), [boriflorsDress.id, larkRoMaxiDress.id]);
   });
 
   test('filters by price range, both ends included', () {
     const filter = ProductFilter(minPrice: 4900, maxPrice: 8254);
 
     expect(ids(filter.apply(women)), [
-      saodimallsuTurtleneck.id,
-      jouicaSweater.id,
+      saodimallsuSweater.id,
+      jouicaCardigan.id,
       biuclyHoodie.id,
       larkRoSkirt.id,
-      larkRoJeggings.id,
-      larkRoSwingDress.id,
+      larkRoJeans.id,
+      larkRoMaxiDress.id,
     ]);
   });
 
   test('brands, colors and sizes must all match', () {
     const filter = ProductFilter(
       brands: {'Lark & Ro'},
-      colors: {ProductColor.black},
+      colors: {ProductColor.brown},
       sizes: {ProductSize.xs},
     );
 
-    expect(ids(filter.apply(women)), [larkRoSkirt.id, larkRoJeggings.id]);
+    // The maxi dress is brown too, but has no XS.
+    expect(ids(filter.apply(women)), [larkRoSkirt.id]);
     expect(filter.hasActiveFilters, isTrue);
   });
 
   test('searches names in both languages and brands', () {
     expect(ids(const ProductFilter(query: ' cardigan ').apply(women)), [
       astylishCardigan.id,
-      ecowishKimono.id,
-      simpleeCardigan.id,
+      ecowishCardigan.id,
+      jouicaCardigan.id,
     ]);
     expect(ids(const ProductFilter(query: 'فستان').apply(women)), [
       boriflorsDress.id,
-      larkRoSwingDress.id,
+      larkRoMaxiDress.id,
     ]);
-    expect(const ProductFilter(query: 'ecowish').apply(women), [ecowishKimono]);
+    expect(const ProductFilter(query: 'ecowish').apply(women), [ecowishCardigan]);
   });
 
   test('sorts by price', () {
@@ -81,7 +82,7 @@ void main() {
   });
 
   test('the sale badge shows -50% for \$49 instead of \$99', () {
-    expect(saodimallsuTurtleneck.discountPercent, 50);
+    expect(saodimallsuSweater.discountPercent, 50);
     expect(astylishCardigan.discountPercent, 0);
   });
 
@@ -101,7 +102,7 @@ void main() {
       container
           .read(productFilterProvider(id).notifier)
           .selectSubcategory(SubcategoryIds.womenJeans);
-      expect(subscription.read(), [larkRoJeggings]);
+      expect(subscription.read(), [larkRoJeans]);
 
       // Other categories keep their own filter.
       expect(

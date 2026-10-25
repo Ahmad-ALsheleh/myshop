@@ -15,8 +15,8 @@ final mockOrders = <Order>[
     createdAt: DateTime(2026, 10, 21),
     items: const [
       CartItem(
-        product: larkRoJeggings,
-        color: ProductColor.black,
+        product: larkRoJeans,
+        color: ProductColor.blue,
         size: ProductSize.m,
         quantity: 2,
       ),
@@ -41,13 +41,13 @@ final mockOrders = <Order>[
     createdAt: DateTime(2026, 10, 2),
     items: const [
       CartItem(
-        product: saodimallsuTurtleneck,
+        product: saodimallsuSweater,
         color: ProductColor.beige,
         size: ProductSize.m,
       ),
       CartItem(
-        product: ecowishKimono,
-        color: ProductColor.orange,
+        product: ecowishCardigan,
+        color: ProductColor.beige,
         size: ProductSize.s,
       ),
     ],

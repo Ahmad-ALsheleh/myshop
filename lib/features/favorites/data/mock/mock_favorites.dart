@@ -2,9 +2,9 @@ import '../../../product/data/mock/mock_products.dart';
 
 /// The 5 favorites of the design.
 final mockFavoriteIds = <String>{
-  saodimallsuTurtleneck.id,
+  saodimallsuSweater.id,
   astylishCardigan.id,
   larkRoSkirt.id,
-  larkRoJeggings.id,
-  larkRoSwingDress.id,
+  larkRoJeans.id,
+  larkRoMaxiDress.id,
 };
